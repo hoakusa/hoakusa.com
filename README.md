@@ -5,10 +5,10 @@ Visit site: [hoakusa.com](http://hoakusa.com)
 A single page application build by [Angular 1.x](https://angularjs.org/) using [Webpack 2.x](http://webpack.github.io/). The project code was written in ES6 support with [Babel](https://babeljs.io/).
 
 You can find some useful information:
-    * My working projects
-    * Porfolio website structure
-    * UX for personal page
-    * Motion Design
+* My working projects
+* Porfolio website structure
+* UX for personal page
+* Motion Design
 
 > Warning: I am happy to share the code for everyone exclude image mateials.
 > Forked by [angular-webpack](https://github.com/preboot/angularjs-webpack) follow [MIT license](/LICENSE).
