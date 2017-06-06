@@ -1,6 +1,8 @@
 import angular from 'angular';
+import routing from './app.config';
+import uirouter from 'angular-ui-router';
 
-import '../style/app.scss';
+import '../assets/style/app.scss';
 
 let app = () => {
   return {
@@ -18,8 +20,9 @@ class AppCtrl {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [])
+angular.module(MODULE_NAME, [uirouter])
   .directive('app', app)
-  .controller('AppCtrl', AppCtrl);
+  .controller('AppCtrl', AppCtrl)
+  .config(routing);
 
 export default MODULE_NAME;

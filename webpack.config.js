@@ -127,8 +127,9 @@ module.exports = function makeWebpackConfig() {
     }, {
       // SCSS LOADER
       test: /\.scss$/,
-      exclude: /node_modules/,
-      loaders: ['raw-loader', 'sass-loader']
+      // exclude: /node_modules/,
+      // loaders: ['raw-loader', 'sass-loader']
+      loader: 'style-loader!css-loader!sass-loader'
     }]
   };
 
