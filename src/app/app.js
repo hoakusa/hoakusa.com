@@ -1,28 +1,31 @@
 import angular from 'angular';
-import routing from './app.config';
 import uirouter from 'angular-ui-router';
+import routing from './app.config';
 
+// IMPORT STYLESHEETS
 import '../assets/style/app.scss';
+import '../assets/lib/pure-min.css';
+import '../assets/lib/animate.css';
 
-let app = () => {
-  return {
-    template: require('./app.html'),
-    controller: 'AppCtrl',
-    controllerAs: 'app'
-  }
-};
+// IMPORT COMPONENTS
+import Menu from './shared/menu/menu.controller';
+import Home from './components/home/home.controller';
 
-class AppCtrl {
+// let app = () => {
+//   return {
+//     template: require('./app.html'),
+//     controller: 'AppController',
+//     controllerAs: 'app'
+//   }
+// };
+
+class AppController {
   constructor() {
-    this.url = 'http://hoakusa.com';
+    // this.url = 'http://hoakusa.com';
   }
 }
 
-const MODULE_NAME = 'app';
-
-angular.module(MODULE_NAME, [uirouter])
-  .directive('app', app)
-  .controller('AppCtrl', AppCtrl)
+export default angular.module('app', [uirouter, Home, Menu])
+  // .directive('app', app)
+  .controller('AppController', AppController)
   .config(routing);
-
-export default MODULE_NAME;

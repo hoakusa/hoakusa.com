@@ -1,7 +1,7 @@
 {
   "name": "hoakusa.com",
   "version": "0.0.1",
-  "description": "Alice Pham personal page",
+  "description": "An Pham personal page",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/hoakusa/hoakusa.com.git"
   },
-  "author": "Jesus Rodriguez",
+  "author": "An Pham",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hoakusa/hoakusa.com/issues"
@@ -21,7 +21,7 @@
   "homepage": "hoakusa.com",
   "dependencies": {
     "angular": "^1.5.0",
-    "angular-ui-router": "^1.0.3"
+    "@uirouter/angularjs": "^1.0.3"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0",

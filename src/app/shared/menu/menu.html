@@ -1,0 +1,26 @@
+<nav id="menu" ng-controller="MenuController">
+  <div class="menu-icon"><i class="icon ion-navicon"></i></div>
+
+  <div class="menu-full">
+    <div class="menu-icon"><i class="icon ion-ios-close-empty"></i></div>
+    <h1 class="logo-text">{{menu.title}}</h1>
+
+    <ul class="mnu-tabs pure-g">
+
+      <li class="menu-item pure-u-1 pure-u-md-1-2 pure-u-lg-1-4"
+          ng-repeat="tab in menu.tabs">
+        <a ng-href="{{tab.url}}">
+          <h4 class="menu-id">{{tab.id}}</h4>
+          <h4 class="menu-name">{{tab.name}}</h4>
+        </a>
+      </li>
+
+    </ul>
+
+    <div class="menu-footer">
+      <div class="copyright"> Copyright @ An Pham 2017. All right reserved.</div>
+      <div class="social-link"></div>
+    </div>
+  </div>
+
+</nav>
