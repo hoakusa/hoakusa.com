@@ -10,6 +10,9 @@ class MenuService {
         name: 'Works',
         url: '/'
       },{
+        name: 'Blog',
+        url: '/'
+      },{
         name: 'Contact',
         url: '/'
       }

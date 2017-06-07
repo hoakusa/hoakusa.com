@@ -2,7 +2,7 @@ import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import routing from './home.routes';
 
-import menu from '../../shared/menu/menu.directive';
+
 
 class HomeController {
   constructor() {
@@ -14,7 +14,7 @@ class HomeController {
   }
 }
 
-export default angular.module('app.home', [uirouter, menu])
+export default angular.module('app.home', [uirouter])
   .config(routing)
   .controller('HomeController', HomeController)
   .name;

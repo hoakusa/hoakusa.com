@@ -1,26 +1,47 @@
-<nav id="menu" ng-controller="MenuController">
-  <div class="menu-icon"><i class="icon ion-navicon"></i></div>
+<nav id="menu-bar" ng-controller="MenuController">
 
-  <div class="menu-full">
-    <div class="menu-icon"><i class="icon ion-ios-close-empty"></i></div>
-    <h1 class="logo-text">{{menu.title}}</h1>
+  <div class="container">
+    <div class="menu-icon">
+      <div class="menu-t"></div>
+      <div class="menu-m"></div>
+      <div class="menu-b"></div>
+    </div>
+  </div>
 
-    <ul class="mnu-tabs pure-g">
+  <div class="menu-full hide" id="menu">
+    
+    <div class="container">
+      <div class="menu-icon">
+        <div class="menu-l"></div>
+        <div class="menu-r"></div>
+      </div>
+      <a href="/"><h1 class="logo-text">{{menu.title}}</h1></a>
+      <p class="logo-bio">{{menu.bio}}</p>
+    </div>
 
-      <li class="menu-item pure-u-1 pure-u-md-1-2 pure-u-lg-1-4"
+    <ul class="menu-tabs pure-g">
+
+      <li class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 menu-item"
           ng-repeat="tab in menu.tabs">
         <a ng-href="{{tab.url}}">
           <h4 class="menu-id">{{tab.id}}</h4>
-          <h4 class="menu-name">{{tab.name}}</h4>
+          <h2 class="menu-name">{{tab.name}}</h2>
         </a>
       </li>
 
     </ul>
 
     <div class="menu-footer">
-      <div class="copyright"> Copyright @ An Pham 2017. All right reserved.</div>
-      <div class="social-link"></div>
+      <div class="container">
+        <div class="copyright">Copyright @ An Pham 2017. All right reserved.</div>
+        <div class="social-link">
+          <a ng-repeat="tab in menu.links" ng-href="{{tab.url}}" target="_blank">
+            {{tab.name}}<span ng-show="menu.links.indexOf(tab) < menu.links.length-1;"> | </span>
+          </a>
+        </div>
+      </div>
     </div>
+
   </div>
 
 </nav>

@@ -3,12 +3,12 @@ import uirouter from 'angular-ui-router';
 import routing from './app.config';
 
 // IMPORT STYLESHEETS
-import '../assets/style/app.scss';
-import '../assets/lib/pure-min.css';
 import '../assets/lib/animate.css';
+import '../assets/style/app.scss';
 
 // IMPORT COMPONENTS
 import Menu from './shared/menu/menu.controller';
+import menu from './shared/menu/menu.directive';
 import Home from './components/home/home.controller';
 
 // let app = () => {
@@ -25,7 +25,7 @@ class AppController {
   }
 }
 
-export default angular.module('app', [uirouter, Home, Menu])
+export default angular.module('app', [uirouter, Home, Menu, menu])
   // .directive('app', app)
   .controller('AppController', AppController)
   .config(routing);

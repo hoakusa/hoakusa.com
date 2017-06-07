@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Source+Sans+Pro');
+
+/**************************************
+ * VARIABLES
+ **************************************/
+
+html { font-size: 62.5%; }
+
+$background: #f1f1f1;
+$color: #212121;
+$dark-bg: #212121;
+$dark-color: #cccccc;
+$dark-color-hover: #999999;
+
+// Font
+$font: 'Sorts Mill Goudy', serif;
+$font-p: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+$font-title: 'Sorts Mill Goudy', serif;
+
+$padding: 50px;
+$letter-spacing: 0.05em;
+
+
+/**************************************
+ * GLOBAL
+ **************************************/
+
+body {
+  position: relative;
+  background: $background;
+  color: $color;
+  font-family: $font;
+  font-size: 1.6rem;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin transition($t, $ease) {
+  -webkit-transition: all $t $ease;
+     -moz-transition: all $t $ease;
+      -ms-transition: all $t $ease;
+          transition: all $t $ease;
+}
+
+@mixin rotate($q) {
+  -webkit-transform: rotate($q);
+     -moz-transform: rotate($q);
+      -ms-transform: rotate($q);
+          transform: rotate($q);
+}
+
+a {
+  color: $color;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: $letter-spacing;
+  @include transition(0.2, ease-out);
+}
+
+ul, ol, ul li, ol li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 400;
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+  font-family: $font;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+.logo-text {
+  margin-top: 100px;
+  margin-bottom: 0;
+}
+
+.logo-bio {
+  margin-top: 0;
+}

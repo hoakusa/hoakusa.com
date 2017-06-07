@@ -9,5 +9,5 @@ let menu = () => {
 };
 
 export default angular.module('directives.menu', [])
-  .directive('menu', menu)
+  .directive('mainMenu', menu) // directive name is Camel case, directive tag is prefix dash
   .name;
