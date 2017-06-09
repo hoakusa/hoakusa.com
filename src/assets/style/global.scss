@@ -12,7 +12,7 @@ $dark-bg: #212121;
 $dark-color: #cccccc;
 $dark-color-hover: #999999;
 
-// Font
+/* Font */
 $font: 'Sorts Mill Goudy', serif;
 $font-p: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
 $font-title: 'Sorts Mill Goudy', serif;
@@ -21,12 +21,13 @@ $padding: 50px;
 $letter-spacing: 0.05em;
 
 
+$arrow-color: $color;
+
 /**************************************
  * GLOBAL
  **************************************/
 
 body {
-  position: relative;
   background: $background;
   color: $color;
   font-family: $font;
@@ -41,6 +42,13 @@ body {
           transition: all $t $ease;
 }
 
+@mixin transitionCubic() {
+  -webkit-transition: all 0.55s cubic-bezier(.25,.46,.45,.94);
+     -moz-transition: all 0.55s cubic-bezier(.25,.46,.45,.94);
+      -ms-transition: all 0.55s cubic-bezier(.25,.46,.45,.94);
+          transition: all 0.55s cubic-bezier(.25,.46,.45,.94);
+}
+
 @mixin rotate($q) {
   -webkit-transform: rotate($q);
      -moz-transform: rotate($q);
@@ -53,7 +61,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   letter-spacing: $letter-spacing;
-  @include transition(0.2, ease-out);
+  @include transition(0.2s, ease-out);
 }
 
 ul, ol, ul li, ol li {
@@ -71,6 +79,13 @@ html, button, input, select, textarea,
   font-family: $font;
 }
 
+main-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
 .hide {
   display: none;
 }
@@ -80,11 +95,180 @@ html, button, input, select, textarea,
   padding-right: $padding;
 }
 
-.logo-text {
-  margin-top: 100px;
-  margin-bottom: 0;
+section {
+
+  .banner-title {
+    padding-top: 162px;
+  }
+
+  .logo-text {
+    font-family: $font-p;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+
+    span {
+      display: inline-block;
+      margin-left: -50px;
+      margin-right: 10px;
+      width: 40px;
+      height: 3px;
+      border-top: solid 1px $color;
+    }
+  }
+
+  .logo-bio {
+    
+  }
 }
 
-.logo-bio {
-  margin-top: 0;
+.changepage {
+  .btn-arrow {
+    display: inline-block;
+    &:nth-child(2) {
+      float: right;
+    }
+  }
+}
+
+/* Button */
+
+.btn {
+  cursor: pointer;
+  color: $color;
+  @include transitionCubic();
+
+  &.btn-arrow {
+    .arrow-right {
+      margin-left: 8px;
+    }
+
+    .arrow-left {
+      margin-right: 8px;
+    }
+  }
+
+  &:hover {
+    color: $dark-color;
+    @include transitionCubic();
+  } 
+}
+
+.btn-main {
+
+  &:before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(1,1,1,1);
+    @include transitionCubic();
+    z-index: -1;
+  }
+  
+  &:hover {
+    &:before {
+      width: 100%;
+      @include transitionCubic();
+    }
+  }  
+}
+
+/* Button arrow */
+
+.btn-arrow {
+  padding: 12px 24px;
+  cursor: pointer;
+
+  &:hover {
+    .arrow-right {
+      -webkit-animation: arrowright 0.55s cubic-bezier(.25,.46,.45,.94);
+         -moz-animation: arrowright 0.55s cubic-bezier(.25,.46,.45,.94);
+          -ms-animation: arrowright 0.55s cubic-bezier(.25,.46,.45,.94);
+              animation: arrowright 0.55s cubic-bezier(.25,.46,.45,.94);
+    }
+
+    .arrow-left {
+      -webkit-animation: arrowleft 0.55s cubic-bezier(.25,.46,.45,.94);
+         -moz-animation: arrowleft 0.55s cubic-bezier(.25,.46,.45,.94);
+          -ms-animation: arrowleft 0.55s cubic-bezier(.25,.46,.45,.94);
+              animation: arrowleft 0.55s cubic-bezier(.25,.46,.45,.94);
+    }
+  }
+}
+
+.arrow {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background-color: $arrow-color;
+
+  &.arrow-left {
+    &:before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 1px;
+      width: 6px;
+      height: 1px;
+      background-color: $arrow-color;
+      @include rotate(-30deg);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 1px;
+      width: 6px;
+      height: 1px;
+      background-color: $arrow-color;
+      @include rotate(30deg);
+    }
+  }
+
+  &.arrow-right {
+    &:before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      right: 1px;
+      width: 6px;
+      height: 1px;
+      background-color: $arrow-color;
+      @include rotate(30deg);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      right: 1px;
+      width: 6px;
+      height: 1px;
+      background-color: $arrow-color;
+      @include rotate(-30deg);
+    }
+  }
+}
+
+/**************************************
+ * ANIMATION KEYS
+ **************************************/
+
+@keyframes arrowright {
+  0%  {transform: translate3d(0,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(1,1,1);}
+  50% {transform: translate3d(40px,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(0,1,1);}
+  51% {transform: translate3d(-40px,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(0,1,1);}
+  100%{transform: translate3d(0,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(1,1,1);}
+}
+
+@keyframes arrowleft {
+  0%  {transform: translate3d(0,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(1,1,1);}
+  50% {transform: translate3d(-40px,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(0,1,1);}
+  51% {transform: translate3d(40px,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(0,1,1);}
+  100%{transform: translate3d(0,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(1,1,1);}
 }

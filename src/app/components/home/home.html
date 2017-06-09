@@ -1,3 +1,34 @@
 <section class="home">
-  
+
+  <section class="banner-home">
+
+    <div class="banner-project">
+       <div class="banner-img">
+         <img ng-src="{{home.page.image}}"/>
+       </div>
+    </div>
+
+    <a class="btn btn-main btn-arrow discovery" ng-href="{{home.page.url}}">
+      View Project
+      <span class="arrow arrow-right"></span>
+    </a>
+
+    <div class="container banner-title">
+      <h5 class="logo-text"><span></span>{{home.page.title}}</h5>
+      <p class="logo-bio">{{home.page.description}}</p>
+    </div>
+
+    <div class="banner-tags" ng-show="home.page.id === 0">
+      <div class="tag1">Hello, I am Alice.</div>
+      <div class="tag2">Create neutral experiences for everyday things</div>
+      <div class="tag3">Provide Web &amp; Mobile Service</div>
+    </div>
+
+    <div class="container changepage">
+      <div class="btn-arrow" ng-click="home.goPrev()"><span class="arrow arrow-left"></span></div>
+      <div class="btn-arrow" ng-click="home.goNext()"><span class="arrow arrow-right"></span></div>
+    </div>
+
+  </section>
+
 </section>

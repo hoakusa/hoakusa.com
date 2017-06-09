@@ -2,19 +2,28 @@ import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import routing from './home.routes';
 
-
+import HomeService from './home.service';
 
 class HomeController {
-  constructor() {
-    this.name = 'World';
+  constructor(HomeService) {
+    this.pages = HomeService.getPages();
+    this.page = this.pages[0];
   }
 
-  changeName() {
-    this.name = 'angular-tips';
+  goPrev() {
+    let nextId = this.page.id > 0 ? this.page.id - 1 : this.pages.length - 1;
+    this.page = this.pages[nextId % this.pages.length];
+  }
+
+  goNext() {
+    let nextId = this.page.id + 1;
+    this.page = this.pages[nextId % this.pages.length];
   }
 }
 
-export default angular.module('app.home', [uirouter])
+HomeController.$inject = ['HomeService'];
+
+export default angular.module('app.home', [uirouter, HomeService])
   .config(routing)
   .controller('HomeController', HomeController)
   .name;
