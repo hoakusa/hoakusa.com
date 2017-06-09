@@ -1,0 +1,80 @@
+@import './global';
+
+/*
+ * VARIABLES
+ */
+
+$img-padding: 100px;
+$img-padding2: 250px;
+
+/*
+ * STYLE
+ */
+
+.work {
+  .project-list {
+    margin-top: 40px;
+
+    li {
+      margin-bottom: 150px;
+    }
+
+    li:nth-child(odd) {
+      img {
+        margin-left: $img-padding;
+      }
+
+      .project-partner, .project-category {
+        margin-left: calc(#{$img-padding} + 50px);
+      }
+
+      .btn {
+        margin-left: calc(#{$img-padding} + 50px - 24px);
+      }
+
+      h1 {
+        margin-left: calc(#{$img-padding} - 20px);
+      }
+    }
+
+    li:nth-child(even) {
+      img {
+        margin-left: $img-padding2;
+      }
+
+      .project-partner, .project-category {
+        margin-left: calc(#{$img-padding2} + 50px);
+      }
+
+      .btn {
+        margin-left: calc(#{$img-padding2} + 50px - 24px);
+      }
+
+      h1 {
+        margin-left: calc(#{$img-padding2} - 20px);
+      }
+    }
+  }
+
+  .project-item {
+    h1 {
+      margin-top: 20%;
+    }
+  }
+
+  .project-img {
+    img {
+      width: 100%;
+      opacity: 1;
+      @include transition(0.55s, ease-out);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .project-detail {
+
+  }
+}

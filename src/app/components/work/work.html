@@ -1,0 +1,28 @@
+<section class="work">
+
+  <div class="container banner-title">
+    <h5 class="logo-text"><span></span>{{work.title}}</h5>
+  </div>
+
+  <ul class="project-list">
+
+    <li class="project-item pure-g" ng-repeat="project in work.projects">      
+      <a class="project-img pure-u-1 pure-u-md-1-2 pure-u-lg-1-2" ng-href="{{project.urls.project}}">
+        <img ng-src="{{project.image}}" />
+      </a>
+
+      <div class="project-detail pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+        <h1>{{project.name}}</h1>
+        <p class="project-partner">{{project.partner.name}}</p>
+        <p class="project-category">- {{project.time}} - {{project.category_name}}</p>        
+        
+        <a class="btn btn-arrow" ng-href="{{project.urls.project}}">
+          View Project
+          <span class="arrow arrow-right"></span>
+        </a>
+      </div>
+    </li>
+
+  </ul>
+
+</section>

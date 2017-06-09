@@ -10,6 +10,7 @@ import '../assets/style/app.scss';
 import Menu from './shared/menu/menu.controller';
 import menu from './shared/menu/menu.directive';
 import Home from './components/home/home.controller';
+import Work from './components/work/work.controller';
 
 // let app = () => {
 //   return {
@@ -25,7 +26,7 @@ class AppController {
   }
 }
 
-export default angular.module('app', [uirouter, Home, Menu, menu])
+export default angular.module('app', [uirouter, Menu, menu, Home, Work])
   // .directive('app', app)
   .controller('AppController', AppController)
   .config(routing);

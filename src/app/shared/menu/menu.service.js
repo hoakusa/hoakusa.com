@@ -8,7 +8,7 @@ class MenuService {
         url: '/'
       },{
         name: 'Works',
-        url: '/'
+        url: '/work'
       },{
         name: 'Blog',
         url: '/'
