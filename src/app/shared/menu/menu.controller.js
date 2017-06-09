@@ -8,6 +8,8 @@ class MenuController {
     this.bio = "UX Designer & Web Developer";
     this.tabs = MenuService.getMenu();
     this.links = SocialLinkService.getLinks();
+
+    this.isActive = false; // Close menu
   }
 }
 

@@ -1,17 +1,17 @@
 <nav id="menu-bar" ng-controller="MenuController">
 
   <div class="container">
-    <div class="menu-icon">
+    <div class="menu-icon menu-hamburger" ng-click="menu.isActive = true;">
       <div class="menu-t"></div>
       <div class="menu-m"></div>
       <div class="menu-b"></div>
     </div>
   </div>
 
-  <div class="menu-full hide" id="menu">
+  <div class="menu-full" id="menu" ng-show="menu.isActive">
     
     <div class="container">
-      <div class="menu-icon">
+      <div class="menu-icon menu-close" ng-click="menu.isActive = false;">
         <div class="menu-l"></div>
         <div class="menu-r"></div>
       </div>

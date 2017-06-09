@@ -32,13 +32,46 @@ $icon: 40px;
     margin-top: 8px;
     transform-origin: 0 8px;
     @include rotate(45deg);
-    // transform: rotate3d(0,0,1,45deg);
   }
 
   .menu-r {
     margin-top: -1px;
-    // transform-origin: 0 -8px;
     @include rotate(-45deg);
+  }
+}
+
+// Animation
+.menu-hamburger {
+  &:hover {
+    div {
+      @include moveright(0.55s);
+    }
+
+    .menu-m {
+      -webkit-animation-delay: 0.075s;
+      animation-delay: 0.075s;
+    }
+
+    .menu-b {
+      -webkit-animation-delay: 0.15s;
+      animation-delay: 0.15s;
+    }
+  }
+}
+
+.menu-close {
+  &:hover {
+    .menu-l {
+      @include moveright(0.55s);
+      @include rotate(45deg);
+    }
+
+    .menu-r {
+      @include moveleft(0.55s);
+      @include rotate(-45deg);
+      -webkit-animation-delay: 0.075s;
+      animation-delay: 0.075s;
+    }
   }
 }
 
@@ -103,7 +136,7 @@ $icon: 40px;
   font-size: 1.4rem;
 
   .container {
-    padding-top: 40px;
+    padding-top: 35px;
   }
 
   .copyright {

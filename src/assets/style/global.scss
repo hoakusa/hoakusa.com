@@ -79,6 +79,42 @@ html, button, input, select, textarea,
   font-family: $font;
 }
 
+/**************************************
+ * ANIMATION
+ **************************************/
+
+@keyframes moveright {
+  0%  {transform: translate3d(0,0,0) scale3d(1,1,1);}
+  50% {transform: translate3d(20px,0,0) scale3d(0,1,1);}
+  51% {transform: translate3d(-20px,0,0) scale3d(0,1,1);}
+  100%{transform: translate3d(0,0,0) scale3d(1,1,1);}
+}
+
+@mixin moveright($t) {
+  -webkit-animation: moveright $t cubic-bezier(.25,.46,.45,.94);
+     -moz-animation: moveright $t cubic-bezier(.25,.46,.45,.94);
+      -ms-animation: moveright $t cubic-bezier(.25,.46,.45,.94);
+          animation: moveright $t cubic-bezier(.25,.46,.45,.94);
+}
+
+@keyframes moveleft {
+  0%  {transform: translate3d(0,0,0) scale3d(1,1,1);}
+  50% {transform: translate3d(-20px,0,0) scale3d(0,1,1);}
+  51% {transform: translate3d(20px,0,0) scale3d(0,1,1);}
+  100%{transform: translate3d(0,0,0) scale3d(1,1,1);}
+}
+
+@mixin moveleft($t) {
+  -webkit-animation: moveleft $t cubic-bezier(.25,.46,.45,.94);
+     -moz-animation: moveleft $t cubic-bezier(.25,.46,.45,.94);
+      -ms-animation: moveleft $t cubic-bezier(.25,.46,.45,.94);
+          animation: moveleft $t cubic-bezier(.25,.46,.45,.94);
+}
+
+/**************************************
+ * GLOBAL
+ **************************************/
+
 main-menu {
   position: absolute;
   top: 0;
@@ -184,17 +220,11 @@ section {
 
   &:hover {
     .arrow-right {
-      -webkit-animation: arrowright 0.55s cubic-bezier(.25,.46,.45,.94);
-         -moz-animation: arrowright 0.55s cubic-bezier(.25,.46,.45,.94);
-          -ms-animation: arrowright 0.55s cubic-bezier(.25,.46,.45,.94);
-              animation: arrowright 0.55s cubic-bezier(.25,.46,.45,.94);
+      @include moveright(0.55s);
     }
 
     .arrow-left {
-      -webkit-animation: arrowleft 0.55s cubic-bezier(.25,.46,.45,.94);
-         -moz-animation: arrowleft 0.55s cubic-bezier(.25,.46,.45,.94);
-          -ms-animation: arrowleft 0.55s cubic-bezier(.25,.46,.45,.94);
-              animation: arrowleft 0.55s cubic-bezier(.25,.46,.45,.94);
+      @include moveleft(0.55s);
     }
   }
 }
@@ -253,22 +283,4 @@ section {
       @include rotate(-30deg);
     }
   }
-}
-
-/**************************************
- * ANIMATION KEYS
- **************************************/
-
-@keyframes arrowright {
-  0%  {transform: translate3d(0,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(1,1,1);}
-  50% {transform: translate3d(40px,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(0,1,1);}
-  51% {transform: translate3d(-40px,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(0,1,1);}
-  100%{transform: translate3d(0,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(1,1,1);}
-}
-
-@keyframes arrowleft {
-  0%  {transform: translate3d(0,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(1,1,1);}
-  50% {transform: translate3d(-40px,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(0,1,1);}
-  51% {transform: translate3d(40px,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(0,1,1);}
-  100%{transform: translate3d(0,0,0) rotate3d(1,0,0,0deg) rotate3d(1,0,0,0deg) rotate3d(0,0,1,0deg) scale3d(1,1,1);}
 }
