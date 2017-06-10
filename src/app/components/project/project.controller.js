@@ -16,7 +16,11 @@ class ProjectController {
     } else {
       // If url param isnt existed -> back to work page
       $state.go('work', {}, {reload: true});      
-    }    
+    }
+
+    console.log(ProjectService.findRelateWork(this.data.id));
+    this.relateWorks = ProjectService.findRelateWork(this.data.id);
+    
   }
 
   goPrev() {
