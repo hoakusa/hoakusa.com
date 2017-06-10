@@ -12,12 +12,12 @@ class HomeController {
 
   goPrev() {
     let nextId = this.page.id > 0 ? this.page.id - 1 : this.pages.length - 1;
-    this.page = this.pages[nextId % this.pages.length];
+    this.page = this.pages[nextId];
   }
 
   goNext() {
-    let nextId = this.page.id + 1;
-    this.page = this.pages[nextId % this.pages.length];
+    let nextId = (this.page.id < this.pages.length - 1) ? this.page.id + 1 : 0;
+    this.page = this.pages[nextId];
   }
 }
 

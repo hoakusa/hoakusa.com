@@ -1,0 +1,17 @@
+<section class="project">
+  
+  <div class="banner-project"
+       ng-style="{'background-image':'url({{project.data.image}})'}">
+
+    <div class="container banner-title">
+      <h5 class="logo-text"><span></span>Work</h5>
+      <h2 class="logo-bio">{{project.data.name}}</h2>
+    </div>
+    <div class="container changepage">
+      <div class="btn-arrow" ng-click="project.goPrev()"><span class="arrow arrow-left"></span></div>
+      <div class="btn-arrow" ng-click="project.goNext()"><span class="arrow arrow-right"></span></div>
+    </div>
+
+  </div>
+
+</section>

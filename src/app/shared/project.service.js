@@ -125,13 +125,31 @@ class ProjectService {
     let list = this.getProjectsAll();
 
     return list.filter((p) => {
-      return p.url.project === param;
-    });   
+      return p.urls.project === param;
+    })[0];
+  }
+
+  getProjectById(id) {
+    let list = this.getProjectsAll();
+
+    return list.filter((p,i) => {
+      return i === id;
+    })[0];
   }
 
   encodeURL(str) {
     let url = str.toLowerCase().replace(/[^A-Z0-9]+/ig, "-");
     return url;
+  }
+
+  findPrev(id) {
+    let nextId = id > 0 ? id - 1 : this.projects.length - 1;
+    return this.getProjectById(nextId).urls.project;
+  }
+
+  findNext(id) {
+    let nextId = (id < this.projects.length - 1) ? id + 1 : 0;
+    return this.getProjectById(nextId).urls.project;
   }
 }
 

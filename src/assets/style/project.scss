@@ -1,0 +1,28 @@
+@import './global';
+
+/*
+ * VARIABLES
+ */
+
+/*
+ * STYLE
+ */
+
+.banner-project {
+  position: relative;
+  height: 100vh;
+  background-size: auto 140%;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  .changepage {
+    position: absolute;
+    bottom: 72px;
+    left: 0;
+    width: calc(100% - #{$padding}*2);
+  }
+}
+
+.project {
+
+}

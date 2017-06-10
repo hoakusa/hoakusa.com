@@ -122,6 +122,18 @@ main-menu {
   z-index: 999;
 }
 
+#logo {
+  display: block;
+  position: absolute;
+  top: 40px;
+  right: $padding;
+  width: 72px;
+  z-index: 100;
+  img {
+    width: 100%;
+  }
+}
+
 .hide {
   display: none;
 }
@@ -132,7 +144,6 @@ main-menu {
 }
 
 section {
-
   .banner-title {
     padding-top: 162px;
   }
