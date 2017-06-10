@@ -4,10 +4,26 @@
     <h5 class="logo-text"><span></span>{{work.title}}</h5>
   </div>
 
+  <ul class="category-list">
+    <li class="category-item">
+      <a ng-click="work.getProjectsAll()" 
+         ng-class="work.isActive[0] ? 'active' : ''">
+        <span class="text">All</span><span class="bar"></span>
+      </a>
+    </li>
+    <li class="category-item" ng-repeat="tab in work.category">
+      <a ng-click="work.getProjects(work.category.indexOf(tab))"
+         ng-class="work.isActive[work.category.indexOf(tab) + 1]  ? 'active' : ''">
+        <span class="text">{{tab}}</span><span class="bar"></span>
+      </a>
+    </li>
+  </ul>
+
   <ul class="project-list">
 
     <li class="project-item pure-g" ng-repeat="project in work.projects">      
-      <a class="project-img pure-u-1 pure-u-md-1-2 pure-u-lg-1-2" ng-href="{{project.urls.project}}">
+      <a class="project-img pure-u-1 pure-u-md-1-2 pure-u-lg-1-2"
+         ng-href="{{project.urls.project}}">
         <img ng-src="{{project.image}}" />
       </a>
 
@@ -21,6 +37,7 @@
           <span class="arrow arrow-right"></span>
         </a>
       </div>
+
     </li>
 
   </ul>

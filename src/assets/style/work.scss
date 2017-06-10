@@ -6,12 +6,61 @@
 
 $img-padding: 100px;
 $img-padding2: 250px;
+$gray: #999999;
 
 /*
  * STYLE
  */
 
 .work {
+  .category-list {
+    position: fixed;
+    top: 100px;
+    right: 0;
+  }
+
+  .category-item {
+    display: block;
+    margin-bottom: 56px;
+    
+    a {
+      display: block;
+      padding: 4px 0;
+      text-align: right;
+
+      .text {
+        font-size: 0.83em;
+        font-family: $font-p;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .bar {
+        display: inline-block;
+        margin-left: 10px;
+        width: 0px;
+        height: 3px;
+        border-top: solid 1px $color;
+        @include transitionCubic();
+      }
+
+      &:hover {
+        border-top-color: $gray;
+        color: $gray;
+      }
+
+      &:active, &.active {
+        .bar {
+          width: 100px;
+        }
+        &:hover {
+          border-top-color: $color;
+          color: $color;
+        }
+      }
+    }
+  }
+
   .project-list {
     margin-top: 40px;
 

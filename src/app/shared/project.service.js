@@ -115,17 +115,18 @@ class ProjectService {
   }
 
   getProjects(param) {
-    return this.projects.filter((p) => {
+    let list = this.getProjectsAll();
+    return list.filter((p) => {
       return p.category === param;
     }); 
   }
 
   getProject(param) {
-    let list = this.getProjects();
+    let list = this.getProjectsAll();
 
     return list.filter((p) => {
       return p.url.project === param;
-    })[0];   
+    });   
   }
 
   encodeURL(str) {
