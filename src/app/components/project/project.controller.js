@@ -17,7 +17,6 @@ class ProjectController {
       this.relateWorks = ProjectService.findRelateWork(this.data.id);
 
       AppService.setTitle(this.data.name + ' |');
-      console.log(this.relateWorks);
     } else {
       // If url param isnt existed -> back to work page
       $state.go('work', {}, {reload: true});      
@@ -26,12 +25,12 @@ class ProjectController {
 
   goPrev() {
     let nextPath = '/work/' + this.ProjectService.findPrev(this.data.id);
-    this.$location.path(nextPath);
+    this.$location.url(nextPath);  
   }
 
   goNext() {
     let nextPath = '/work/' + this.ProjectService.findNext(this.data.id);
-    this.$location.path(nextPath);
+    this.$location.url(nextPath);
   }
   
 }

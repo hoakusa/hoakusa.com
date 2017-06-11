@@ -9,6 +9,12 @@
  */
 
 .contact {
+
+  a {
+    text-align: center;
+    font-style: italic;
+  }
+
   .banner-img {
     position: relative;
     height: 350px;
@@ -21,12 +27,10 @@
     margin: 0 auto;
     margin-top: -50px;
     display: block;
-    width: 64%;
+    width: 100%;
     background-color: rgba(1,1,1,1);
     color: $dark-color;
     font-size: 2.4rem;
-    font-style: italic;
-    text-align: center;
 
     &.btn-main {
       &:before {
@@ -45,6 +49,59 @@
     margin-top: 50px;
     display: block;
     width: 200px;
+  }
+
+  .skills {
+    width: 640px;
+    margin: 0 auto 40px auto;
+  }
+
+  .title {
+    position: relative;
+    margin-top: 80px;
+    border-top: solid 1px $color;
+    padding: 25px 0;
+    text-align: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: calc(50% - 100px);
+      display: block;
+      width: 200px;
+      height: 1px;
+      background-color: $background;
+    }
+
+    span {
+      position: absolute;
+      display: block;
+      top: -12px;
+      left: 0;
+      width: 100%;
+      font-style: italic;
+      letter-spacing: 2px;
+    }
+  }
+
+  ul {
+    line-height: 31px;
+  }
+
+  .certificate {
+    margin: 0 auto;
+    display: block;
+    width: 400px;
+  }
+
+  .contact-info {
     text-align: center;
   }
+}
+
+footer {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 20px 0;
 }

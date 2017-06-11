@@ -81,11 +81,14 @@
       }
     }
   }
-  
+
+  .bottom {
+    margin-bottom: 100px;
+  }
 }
 
 .related-work {
-  margin: 150px 0;
+  margin: 150px 0 100px 0;
 
   h4 {
     font-style: italic;

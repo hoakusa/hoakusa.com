@@ -7,14 +7,64 @@
     </div>
   </div>
 
-  <a class="start-project btn btn-main btn-arrow" ng-href="mailto:{{contact.email}}">
-    Start a project
-    <span class="arrow arrow-right"></span>
-  </a>
+  <div class="container-main">
+    <a class="start-project btn btn-main btn-arrow" ng-href="mailto:{{contact.email}}">
+      Start a project
+      <span class="arrow arrow-right"></span>
+    </a>
 
-  <a class="cv btn btn-arrow" ng-href="{{contact.cv}}" target="_blank">
-    Curriculum Vitae
-    <span class="arrow arrow-right"></span>
-  </a>
+    <a class="cv btn btn-arrow" ng-href="{{contact.cv}}" target="_blank">
+      Curriculum Vitae
+      <span class="arrow arrow-right"></span>
+    </a>
+
+    <a class="btn btn-arrow certificate" ng-href="{{contact.certification}}" target="_blank">
+        Front End Development Certification
+        <span class="arrow arrow-right"></span>
+      </a>
+
+    <div class="skills">
+      <div class="title"><span>Services</span></div>
+      <ul>
+        <li>Web Service - UX/UI, Full-stack developer, Responsive Design</li>
+        <li>Mobile Service - UX/UI, Interaction, iOS/Android Application, IoT</li>
+        <li>Brand &amp; Service Design - Logo, Concept, Brand Identity, Graphic Design</li>
+        <li>Research - User Research, Usability Testing</li>
+      </ul>
+
+      <div class="title"><span>Skills</span></div>
+      <ul>
+        <li>Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Sketch App</li>
+        <li>Prototype - Invision, Frame.js, Origami Studio</li>
+        <li>Interactive and Motion Design</li>
+        <li>Concept, Sketch, Wireframe to Prototype</li>
+        <li>Team work - Agile method, Trello</li>
+      </ul>
+
+      <div class="title"><span>Programming Skills</span></div>
+      <ul>
+        <li>The most favorite language: <strong>Javascript</strong> - ECMAScript 5, 6, TypeScript</li>
+        <li>HTML5/CSS 3 - SASS, LESS, Boostrap, Foundation, Polymer, Jekyll, Pug(Jade-lang), Wordpress CMS</li>
+        <li>Front end - AngularJS, React, Meteor - webpack, bower, babel, karma, jasmine</li>
+        <li>Back end - Node.js, express.js, PHP with LAMP, WAMP, Laravel 4, 5</li>
+        <li>Data - React, d3.js, REST/RESTful API, ajax</li>
+        <li>Environment - Linux, CLI, WAMP, LAMP</li>
+        <li>Git version control - Github, Bitbucket</li>
+        <li>Java - Android Studio, JavaEE | C# - .NET, asp.NET, Unity3D | Rails - Ruby on Rails</li>
+      </ul>
+
+      <div class="title"><span>Contact info</span></div>
+      <ul class="contact-info">
+        <li><a class="btn" ng-href="mailto:{{contact.email}}">anpham(dot)hn910(at)gmail(dot)com</a></li>
+        <li ng-repeat="tab in contact.links" class="social-item">
+          <a ng-href="{{tab.url}}" target="_blank">{{tab.name}}</a>
+        </li>
+      </ul>
+    </div>
+    
+    </div><!-- ./skills -->    
+  </div><!-- ./container-main -->
+
+  <footer>Copyright @ An Pham 2017. All right reserved.</footer>
 
 </section>
