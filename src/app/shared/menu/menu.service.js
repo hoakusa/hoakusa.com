@@ -5,16 +5,20 @@ class MenuService {
     this.tabs = [
       {
         name: 'About',
-        url: '/'
+        url: '/',
+        state: 'home'
       },{
         name: 'Works',
-        url: '/work'
+        url: '/work',
+        state: 'work'
       },{
         name: 'Blog',
-        url: '/'
+        url: '/',
+        state: 'home'
       },{
         name: 'Contact',
-        url: '/contact'
+        url: '/contact',
+        state: 'contact'
       }
     ];
   }

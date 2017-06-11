@@ -1,38 +1,43 @@
 import angular from 'angular';
 
+import ProjectService from '../../shared/project.service';
+
 class HomeService {
-  constructor() {
+  constructor(ProjectService) {
+    this.ProjectService = ProjectService;
     this.pages = [
       {
         title: 'About',
         description: '',
-        image: 'https://image.ibb.co/cdT2tF/G743bff.jpg',
-        projectURL: '/work/project-1'
+        projectId: 0
       },{
         title: 'Web Service',
         description: 'Interactive, Full stack Developer, AngularJS, React, Wordpress CMS',
-        image: 'https://image.ibb.co/gQ21na/ARiOahH.jpg',
-        projectURL: '/work/web-service'
+        projectId: 1
       },{
         title: 'iOS/Android Application',
         description: 'Mobile Interaction, Prototype, Invision, Frame.js, IoT app',
-        image: 'https://image.ibb.co/dHOkDF/o3hIuqr.jpg',
-        projectURL: '/work/ios-android-application'
+        projectId: 2
       },{
         title: 'Brand & Service',
         description: 'Concept, Wireframe, Brand Identity, Photoshop, Illustrator, Sketch App',
-        image: 'https://image.ibb.co/dHOkDF/o3hIuqr.jpg',
-        projectURL: '/work/brand-service'
+        projectId: 3
       }
     ];
   }
 
   getPages() {
-    this.pages.forEach((tab, i) => tab.id = i);
+    this.pages.forEach((tab, i) => {
+      tab.id = i;
+      tab.image = this.ProjectService.getProjectById(tab.projectId).image;
+      tab.projectURL = '/work/' + this.ProjectService.getProjectById(tab.projectId).urls.project;
+    });
     return this.pages;
   }
 }
 
-export default angular.module('services.home', [])
+HomeService.$inject = ['ProjectService'];
+
+export default angular.module('services.home', [ProjectService])
   .service('HomeService', HomeService)
   .name;

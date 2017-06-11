@@ -15,7 +15,7 @@
         <div class="menu-l"></div>
         <div class="menu-r"></div>
       </div>
-      <a href="/"><h1 class="logo-text">{{menu.title}}</h1></a>
+      <a ng-click="menu.goto('home')"><h1 class="logo-text">{{menu.title}}</h1></a>
       <p class="logo-bio">{{menu.bio}}</p>
     </div>
 
@@ -23,7 +23,7 @@
 
       <li class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 menu-item"
           ng-repeat="tab in menu.tabs">
-        <a ng-href="{{tab.url}}">
+        <a ng-click="menu.goto(tab.state)">
           <h4 class="menu-id">{{tab.id}}</h4>
           <h2 class="menu-name">{{tab.name}}</h2>
         </a>
