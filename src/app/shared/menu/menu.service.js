@@ -14,7 +14,7 @@ class MenuService {
         url: '/'
       },{
         name: 'Contact',
-        url: '/'
+        url: '/contact'
       }
     ];
   }

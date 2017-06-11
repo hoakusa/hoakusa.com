@@ -3,9 +3,11 @@ import uirouter from 'angular-ui-router';
 import routing from './work.routes';
 
 import ProjectService from '../../shared/project.service';
+import AppService from '../../app.service';
 
 class WorkController {
-  constructor(ProjectService) {
+  constructor(ProjectService, AppService) {
+    AppService.setTitle('Works |');
     this.isActive = [true];
     this.title = "Works";
     this.ProjectService = ProjectService;
@@ -34,9 +36,9 @@ class WorkController {
   }
 }
 
-WorkController.$inject = ['ProjectService'];
+WorkController.$inject = ['ProjectService', 'AppService'];
 
-export default angular.module('app.work', [uirouter, ProjectService])
+export default angular.module('app.work', [uirouter, ProjectService, AppService])
   .config(routing)
   .controller('WorkController', WorkController)
   .name;

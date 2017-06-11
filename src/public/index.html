@@ -1,8 +1,8 @@
 <!doctype html>
-<html ng-app="app" lang="en">
+<html ng-app="app" lang="en" ng-controller="AppController as app">
 <head>
   <meta charset="UTF-8">
-  <title>An Pham personal page</title>
+  <title ng-bind="app.App.getTitle()">An Pham - UX Designer &amp; Web Developer</title>
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 

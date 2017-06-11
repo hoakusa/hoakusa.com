@@ -3,9 +3,11 @@ import uirouter from 'angular-ui-router';
 import routing from './home.routes';
 
 import HomeService from './home.service';
+import AppService from '../../app.service';
 
 class HomeController {
-  constructor(HomeService) {
+  constructor(HomeService, AppService) {
+    AppService.setTitle('hoakusa |');
     this.pages = HomeService.getPages();
     this.page = this.pages[0];
   }
@@ -21,9 +23,9 @@ class HomeController {
   }
 }
 
-HomeController.$inject = ['HomeService'];
+HomeController.$inject = ['HomeService', 'AppService'];
 
-export default angular.module('app.home', [uirouter, HomeService])
+export default angular.module('app.home', [uirouter, HomeService, AppService])
   .config(routing)
   .controller('HomeController', HomeController)
   .name;

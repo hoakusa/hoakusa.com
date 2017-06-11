@@ -3,9 +3,10 @@ import uirouter from 'angular-ui-router';
 import routing from './project.routes';
 
 import ProjectService from '../../shared/project.service';
+import AppService from '../../app.service';
 
 class ProjectController {
-  constructor(ProjectService, $stateParams, $state, $location) {
+  constructor(ProjectService, AppService, $stateParams, $state, $location) {
     let name = $stateParams.name;
     this.ProjectService = ProjectService;
     this.$location = $location;
@@ -13,14 +14,14 @@ class ProjectController {
     if (!!ProjectService.getProject(name)) {
       // If url param is existed.
       this.data = ProjectService.getProject(name);
+      this.relateWorks = ProjectService.findRelateWork(this.data.id);
+
+      AppService.setTitle(this.data.name + ' |');
+      
     } else {
       // If url param isnt existed -> back to work page
       $state.go('work', {}, {reload: true});      
-    }
-
-    console.log(ProjectService.findRelateWork(this.data.id));
-    this.relateWorks = ProjectService.findRelateWork(this.data.id);
-    
+    }   
   }
 
   goPrev() {
@@ -35,9 +36,9 @@ class ProjectController {
   
 }
 
-ProjectController.$inject = ['ProjectService', '$stateParams', '$state', '$location'];
+ProjectController.$inject = ['ProjectService', 'AppService', '$stateParams', '$state', '$location'];
 
-export default angular.module('app.project', [uirouter, ProjectService])
+export default angular.module('app.project', [uirouter, ProjectService, AppService])
   .config(routing)
   .controller('ProjectController', ProjectController)
   .name;

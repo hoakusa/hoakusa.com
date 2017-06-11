@@ -12,6 +12,9 @@ import menu from './shared/menu/menu.directive';
 import Home from './components/home/home.controller';
 import Work from './components/work/work.controller';
 import Project from './components/project/project.controller';
+import Contact from './components/contact/contact.controller';
+
+import AppService from './app.service';
 
 // let app = () => {
 //   return {
@@ -22,12 +25,14 @@ import Project from './components/project/project.controller';
 // };
 
 class AppController {
-  constructor() {
-    // this.url = 'http://hoakusa.com';
+  constructor(AppService) {
+    this.App = AppService;
   }
 }
 
-export default angular.module('app', [uirouter, Menu, menu, Home, Work, Project])
+AppController.$inject = ['AppService'];
+
+export default angular.module('app', [uirouter, Menu, menu, Home, Work, Project, Contact, AppService])
   // .directive('app', app)
   .controller('AppController', AppController)
   .config(routing);
