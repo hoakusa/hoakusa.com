@@ -2,13 +2,19 @@
   
   <div class="banner-img"
        ng-style="{'background-image':'url({{contact.image}})'}">
+    <div class="container banner-title">
+      <h5 class="logo-text"><span></span>{{contact.title}}</h5>
+    </div>
   </div>
 
-  <div class="container banner-title">
-    <h5 class="logo-text"><span></span>{{contact.title}}</h5>
-  </div>
+  <a class="start-project btn btn-main btn-arrow" ng-href="mailto:{{contact.email}}">
+    Start a project
+    <span class="arrow arrow-right"></span>
+  </a>
 
-
-  
+  <a class="cv btn btn-arrow" ng-href="{{contact.cv}}" target="_blank">
+    Curriculum Vitae
+    <span class="arrow arrow-right"></span>
+  </a>
 
 </section>

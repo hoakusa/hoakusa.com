@@ -9,6 +9,8 @@ class ContactController {
     AppService.setTitle('Contact |');
     this.title = 'Contact';
     this.image = 'https://image.ibb.co/cdT2tF/G743bff.jpg';
+    this.email = 'anpham.hn910@gmail.com';
+    this.cv    = '/';
   }
   
 }

@@ -17,7 +17,7 @@ class ProjectController {
       this.relateWorks = ProjectService.findRelateWork(this.data.id);
 
       AppService.setTitle(this.data.name + ' |');
-      
+      console.log(this.relateWorks);
     } else {
       // If url param isnt existed -> back to work page
       $state.go('work', {}, {reload: true});      

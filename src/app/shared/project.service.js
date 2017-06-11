@@ -203,12 +203,12 @@ class ProjectService {
       });
 
       if (results.length === 2 && filter.length > 0) {
-        results.push(filter[0]);
+        results.push(filter[0].id);
         return results;
       }
 
       if (results.length === 1 && filter.length > 1) {
-        results.push(filter[0], filter[1]);
+        results.push(filter[0].id, filter[1].id);
         return results;
       }
 
@@ -218,8 +218,10 @@ class ProjectService {
         if (i !== id) return p.category === project.category;
       });
 
-      if (filter.length >= 3) return [filter[0],filter[1],filter[2]];
-      else return filter;
+      if (filter.length >= 3) return [filter[0].id, filter[1].id, filter[2].id];
+      else if (filter.length === 2) return [filter[0].id, filter[1].id];
+      else if (filter.length === 1) return [filter[0].id];
+      else return results;
     }
   }
 
