@@ -6,19 +6,23 @@ class MenuService {
       {
         name: 'About',
         url: '/',
-        state: 'home'
+        state: 'home',
+        image: 'https://image.ibb.co/nxeAqv/g1.jpg'
       },{
         name: 'Works',
         url: '/work',
-        state: 'work'
+        state: 'work',
+        image: 'https://image.ibb.co/dBBOAv/g2.jpg'
       },{
         name: 'Blog',
         url: '/',
-        state: 'home'
+        state: 'home',
+        image: 'https://image.ibb.co/fHygxa/g3.jpg'
       },{
         name: 'Contact',
         url: '/contact',
-        state: 'contact'
+        state: 'contact',
+        image: 'https://image.ibb.co/nxeAqv/g1.jpg'
       }
     ];
   }

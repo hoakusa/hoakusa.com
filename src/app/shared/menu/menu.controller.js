@@ -9,13 +9,19 @@ class MenuController {
     this.bio = "UX Designer & Web Developer";
     this.tabs = MenuService.getMenu();
     this.links = SocialLinkService.getLinks();
-
-    this.isActive = false; // Close menu
   }
 
   goto(state) {
-    this.isActive = false;
+    this.close();
     this.$state.go(state, {}, {reload: true});
+  }
+
+  open() {
+    document.getElementById('menu').style.left = '0';
+  }
+
+  close() {
+    document.getElementById('menu').style.left = '-100%';
   }
 }
 

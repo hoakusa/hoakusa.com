@@ -7,16 +7,16 @@
 html { font-size: 62.5%; }
 
 $background: #fefefe;
-$bg1: #ADA397;
+$color: #3F4F5E;
+$dark-bg: #3E603B;
+$dark-highlight: #d3e8cb;
+$dark-color: #E7E3D8;
+$dark-color-hover: #999999;
 
-
-$color: #ADA397;
-$green: #476A30;
+$gray: #bebebe;
+$green: #3E603B;
 $l-green: #86AF49;
 $a: #987F47;
-$dark-bg: #212121;
-$dark-color: #cccccc;
-$dark-color-hover: #999999;
 
 /* Font */
 $font: 'Sorts Mill Goudy', serif;
@@ -41,6 +41,13 @@ body {
   letter-spacing: $letter-spacing;
 }
 
+@mixin blur($q) {
+  -webkit-filter: blur($q);
+     -moz-filter: blur($q);
+      -ms-filter: blur($q);
+          filter: blur($q);
+}
+
 @mixin transition($t, $ease) {
   -webkit-transition: all $t $ease;
      -moz-transition: all $t $ease;
@@ -60,6 +67,20 @@ body {
      -moz-transform: rotate($q);
       -ms-transform: rotate($q);
           transform: rotate($q);
+}
+
+@mixin moveX($q) {
+  -webkit-transform: translateX($q);
+     -moz-transform: translateX($q);
+      -ms-transform: translateX($q);
+          transform: translateX($q);
+}
+
+@mixin moveY($q) {
+  -webkit-transform: translateY($q);
+     -moz-transform: translateY($q);
+      -ms-transform: translateY($q);
+          transform: translateY($q);
 }
 
 a {

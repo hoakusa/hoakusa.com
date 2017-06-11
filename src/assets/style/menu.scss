@@ -20,7 +20,7 @@ $icon: 40px;
   div {
     width: 36px;
     height: 1px;
-    background-color: $color;
+    background-color: $dark-bg;
     margin-bottom: 8px;
   }
 
@@ -32,11 +32,13 @@ $icon: 40px;
     margin-top: 8px;
     transform-origin: 0 8px;
     @include rotate(45deg);
+    @include transition(0.3s, ease-out);
   }
 
   .menu-r {
     margin-top: -1px;
     @include rotate(-45deg);
+    @include transition(0.3s, ease-out);
   }
 }
 
@@ -62,15 +64,11 @@ $icon: 40px;
 .menu-close {
   &:hover {
     .menu-l {
-      @include moveright(0.55s);
-      @include rotate(45deg);
+      @include rotate(135deg);
     }
 
     .menu-r {
-      @include moveleft(0.55s);
-      @include rotate(-45deg);
-      -webkit-animation-delay: 0.075s;
-      animation-delay: 0.075s;
+      @include rotate(45deg);      
     }
   }
 }
@@ -78,11 +76,16 @@ $icon: 40px;
 .menu-full {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 100vh;
   background-color: $dark-bg;
   color: $dark-color;
+  @include transitionCubic();
+
+  a {
+    color: $dark-color;
+  }
 
   .logo-text {
     margin-top: 100px;
@@ -91,10 +94,6 @@ $icon: 40px;
 
   .logo-bio {
 
-  }
-
-  a {
-    color: $dark-color;
   }
 
   .menu-icon div {
@@ -108,6 +107,20 @@ $icon: 40px;
   margin-top: 56px;
 }
 
+.menu-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: -100px center;
+  z-index: -1;
+  opacity: 0;
+  @include transition(0.55s, ease-out);
+}
+
 .menu-item {
   position: relative;
   height: calc(100vh - #{$icon} - 100px - 46px - 23px - 16px - 56px - 100px);
@@ -117,8 +130,10 @@ $icon: 40px;
     width: 100%;
     height: 100%;
     margin: 0;
-    border-right: solid 1px rgba(255,255,255,0.2);
+    border-right: solid 1px rgba(255,255,255, .2);
     // border-left: none;
+    background-color: rgba(62,96,59,0);
+    @include transition(0.55s, ease-out);
 
     h4,h2 {
       margin-left: $padding;
@@ -126,6 +141,14 @@ $icon: 40px;
 
     h4 {
       margin-top: 30%;
+    }
+
+    &:hover {
+      background-color: rgba(62,96,59, .5);
+      .menu-img {
+        background-position: -120px center;
+        opacity: 1;
+      }
     }
   }
 }
@@ -146,5 +169,28 @@ $icon: 40px;
   .social-link {
     display: inline-block;
     float: right;
+
+    a .text {
+      position: relative;
+      @include transitionCubic();
+      &:before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: -8px;
+        width: 0;
+        height: calc(100% + 8px);
+        background-color: $dark-highlight;
+        @include transitionCubic();
+        z-index: -1;
+      }
+    }
+
+    a:hover .text {
+      color: $dark-bg;
+      &:before {
+        width: calc(100% + 15px);
+      }
+    }
   }
 }
