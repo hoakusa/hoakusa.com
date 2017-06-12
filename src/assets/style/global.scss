@@ -149,6 +149,50 @@ html, button, input, select, textarea,
           animation: moveleft $t cubic-bezier(.25,.46,.45,.94);
 }
 
+@keyframes fadeIn {
+  0%  {opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@mixin fadeIn($t) {
+  -webkit-animation: fadeIn $t ease-out;
+     -moz-animation: fadeIn $t ease-out;
+      -ms-animation: fadeIn $t ease-out;
+          animation: fadeIn $t ease-out;
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 1s ease-out;
+     -moz-animation: fadeIn 1s ease-out;
+      -ms-animation: fadeIn 1s ease-out;
+          animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeOut {
+  0%  {opacity: 1;}
+  100%{opacity: 0;}
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 1s ease-out;
+     -moz-animation: fadeIn 1s ease-out;
+      -ms-animation: fadeIn 1s ease-out;
+          animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeInOut {
+  0%  {opacity: 1;}
+  50% {opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.fadeInOut {
+  -webkit-animation: fadeInOut 1s ease;
+     -moz-animation: fadeInOut 1s ease;
+      -ms-animation: fadeInOut 1s ease;
+          animation: fadeInOut 1s ease;
+}
+
 /**************************************
  * GLOBAL
  **************************************/

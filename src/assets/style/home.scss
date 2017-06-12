@@ -4,6 +4,26 @@
  * VARIABLES
  */
 
+ @keyframes swipeLeft {
+  0%  {
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+
+  100%{
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(200px,0,0);
+  }
+}
+
+@mixin swipeLeft($t) {
+  -webkit-animation: swipeLeft $t ease-in;
+     -moz-animation: swipeLeft $t ease-in;
+      -ms-animation: swipeLeft $t ease-in;
+          animation: swipeLeft $t ease-in;
+}
 
 
 /*
@@ -11,10 +31,37 @@
  */
 
 .home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 
   .banner-home {
-    position: relative;
-    height: 100vh;    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+
+    &.prev {
+      @include swipeLeft(0.3s);
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translate3d(0,0,0);
+      @include fadeIn(1s);
+    }
+
+    &.next {
+      opacity: 0;
+      visibility: hidden;
+      transform: translate3d(0,0,0);
+    }
+
   }
 
   .banner-project {
@@ -27,13 +74,13 @@
     overflow: hidden;
 
     .banner-img {
+      position: relative;
       margin-left: 20%;
       height: 100%;
       border-bottom-left-radius: 1000px;
       overflow: hidden;
       img {
-        margin-left: 0;
-        height: 100%;
+        height: 120%;
       }
     }
   }
@@ -53,7 +100,7 @@
   .discovery {
     position: absolute;
     bottom: 20%;
-    right: 100px;
+    right: 15%;
   }
 
   .changepage {

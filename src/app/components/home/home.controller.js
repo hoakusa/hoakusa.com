@@ -6,39 +6,70 @@ import HomeService from './home.service';
 import AppService from '../../app.service';
 
 class HomeController {
-  constructor(HomeService, AppService, $interval) {
+  constructor(HomeService, AppService, $interval, $timeout) {
     AppService.setTitle('hoakusa |');
+
     this.pages = HomeService.getPages();
-    this.page = this.pages[0];
+    this.currentPage = 0;
 
-    this.timeinterval = $interval(this.nextPage.bind(this), 7000);
+    this.timeinterval = $interval(this.showSlides.bind(this), 10000);
+
     this.$interval = $interval;
+    this.$timeout = $timeout;
+
+    this.setBanner(this.currentPage);
   }
 
-  prevPage() {
-    let nextId = this.page.id > 0 ? this.page.id - 1 : this.pages.length - 1;
-    this.page = this.pages[nextId];
+  showSlides() {
+    this.setBanner(this.nextPage(this.currentPage));
+    this.currentPage = this.nextPage(this.currentPage);
   }
 
-  nextPage() {
-    let nextId = (this.page.id < this.pages.length - 1) ? this.page.id + 1 : 0;
-    this.page = this.pages[nextId];
+  prevPage(id) {
+    let nextId = id > 0 ? id - 1 : this.pages.length - 1;
+    return nextId;
   }
 
-  goPrev() {
+  nextPage(id) {
+    let nextId = (id < this.pages.length - 1) ? id + 1 : 0;
+    return nextId;
+  }
+
+  goPrev(id) {
     this.$interval.cancel(this.timeinterval);
-    this.prevPage();
-    this.timeinterval = this.$interval(this.nextPage.bind(this), 7000);
+    this.currentPage = this.prevPage(id);
+    this.setBanner(this.prevPage(id));
+
+    this.timeinterval = this.$interval(this.showSlides.bind(this), 10000);
   }
 
-  goNext() {
+  goNext(id) {
     this.$interval.cancel(this.timeinterval);
-    this.nextPage();
-    this.timeinterval = this.$interval(this.nextPage.bind(this), 7000);
+    this.currentPage = this.nextPage(id);
+    this.setBanner(this.nextPage(id));
+
+    this.timeinterval = this.$interval(this.showSlides.bind(this), 10000);
+  }
+
+  setBanner(id) {
+    this.isActive = [];
+    this.isNext   = [];
+    this.isPrev   = [];
+
+    for(let i = 0; i<this.pages.length; i++) {
+      if (i === id) this.isActive.push(true);
+      else this.isActive.push(false);
+
+      if (i === this.nextPage(id)) this.isNext.push(true);
+      else this.isNext.push(false);
+
+      if (i === this.prevPage(id)) this.isPrev.push(true);
+      else this.isPrev.push(false);
+    }
   }
 }
 
-HomeController.$inject = ['HomeService', 'AppService', '$interval'];
+HomeController.$inject = ['HomeService', 'AppService', '$interval', '$timeout'];
 
 export default angular.module('app.home', [uirouter, HomeService, AppService])
   .config(routing)

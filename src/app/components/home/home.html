@@ -1,32 +1,35 @@
 <section class="home">
 
-  <section class="banner-home">
+  <section class="banner-home" ng-repeat="page in home.pages"
+    ng-class="{'active': home.isActive[page.id],
+               'next'  : home.isNext[page.id],
+               'prev'  : home.isPrev[page.id]}">
 
     <div class="banner-project">
        <div class="banner-img">
-         <img ng-src="{{home.page.image}}"/>
+         <img ng-src="{{page.image}}"/>
        </div>
     </div>
 
-    <a class="btn btn-main btn-arrow discovery" ng-href="{{home.page.projectURL}}">
+    <a class="btn btn-main btn-arrow discovery" ng-href="{{page.projectURL}}">
       View Project
       <span class="arrow arrow-right"></span>
     </a>
 
     <div class="container banner-title">
-      <h5 class="logo-text"><span></span>{{home.page.title}}</h5>
-      <p class="logo-bio">{{home.page.description}}</p>
+      <h5 class="logo-text"><span></span>{{page.title}}</h5>
+      <p class="logo-bio">{{page.description}}</p>
     </div>
 
-    <div class="banner-tags" ng-show="home.page.id === 0">
+    <div class="banner-tags" ng-show="page.id === 0">
       <div class="tag1">Hello, I am Alice.</div>
       <div class="tag2">Create neutral experiences for everyday things</div>
       <div class="tag3">Provide Web &amp; Mobile Service</div>
     </div>
 
     <div class="container changepage">
-      <div class="btn-arrow" ng-click="home.goPrev()"><span class="arrow arrow-left"></span></div>
-      <div class="btn-arrow" ng-click="home.goNext()"><span class="arrow arrow-right"></span></div>
+      <div class="btn-arrow" ng-click="home.goPrev(page.id)"><span class="arrow arrow-left"></span></div>
+      <div class="btn-arrow" ng-click="home.goNext(page.id)"><span class="arrow arrow-right"></span></div>
     </div>
 
   </section>
