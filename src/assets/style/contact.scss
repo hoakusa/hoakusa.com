@@ -28,14 +28,12 @@
     margin-top: -50px;
     display: block;
     width: 100%;
-    background-color: rgba(1,1,1,1);
     color: $dark-color;
     font-size: 2.4rem;
 
     &.btn-main {
       &:before {
         z-index: 0;
-        background-color: rgba(255,255,255,0.2);
       }
     }
 
@@ -59,7 +57,7 @@
   .title {
     position: relative;
     margin-top: 80px;
-    border-top: solid 1px $color;
+    border-top: solid 1px #cccccc;
     padding: 25px 0;
     text-align: center;
 
@@ -82,6 +80,7 @@
       width: 100%;
       font-style: italic;
       letter-spacing: 2px;
+      color: $l-green;
     }
   }
 

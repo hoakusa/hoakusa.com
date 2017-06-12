@@ -6,7 +6,6 @@
 
 $img-padding: 100px;
 $img-padding2: 250px;
-$gray: #999999;
 
 /*
  * STYLE
@@ -40,7 +39,7 @@ $gray: #999999;
         margin-left: 10px;
         width: 0px;
         height: 3px;
-        border-top: solid 1px $color;
+        border-top: solid 1px $gray;
         @include transitionCubic();
       }
 
@@ -54,7 +53,7 @@ $gray: #999999;
           width: 100px;
         }
         &:hover {
-          border-top-color: $color;
+          border-top-color: $gray;
           color: $color;
         }
       }
@@ -128,12 +127,12 @@ $gray: #999999;
       @include transition(0.55s, ease-out);
 
       &:hover {
-        opacity: 0.8;
+        opacity: 0.7;
       }
     }
   }
 
-  .project-detail {
-
+  .btn {
+    font-style: italic;
   }
 }

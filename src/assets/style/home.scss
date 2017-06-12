@@ -62,30 +62,5 @@
     left: 0;
     width: calc(100% - #{$padding}*2);
   }
-
-  .btn {
-    color: $color; // Change color
-
-    &.btn-main {
-      &:before {
-        background-color: rgba(1,1,1,1);
-      }
-    }
-    
-    &:hover {
-      color: $dark-color;
-
-      .arrow {
-        background-color: $dark-color;
-
-        &.arrow-right {
-          &:before, &:after {
-            background-color: $dark-color;
-          }
-        }
-      }
-    }
-  }
-
 }
 

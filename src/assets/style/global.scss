@@ -11,12 +11,11 @@ $color: #3F4F5E;
 $dark-bg: #3E603B;
 $dark-highlight: #d3e8cb;
 $dark-color: #E7E3D8;
-$dark-color-hover: #999999;
 
 $gray: #bebebe;
 $green: #3E603B;
 $l-green: #86AF49;
-$a: #987F47;
+$a: #8B6F48;
 
 /* Font */
 $font: 'Sorts Mill Goudy', serif;
@@ -26,8 +25,9 @@ $font-title: 'Sorts Mill Goudy', serif;
 $padding: 50px;
 $letter-spacing: 0.08em;
 
-
-$arrow-color: $color;
+$selection-bg: rgba(171,189,177, .5);
+$selection-color: #ffffff;
+$arrow-color: $a;
 
 /**************************************
  * GLOBAL
@@ -105,6 +105,16 @@ html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
   font-family: $font;
   letter-spacing: $letter-spacing;
+}
+
+::selection {
+  background: $selection-bg;
+  color: $selection-color;
+}
+
+::-moz-selection {
+  background: $selection-bg;
+  color: $selection-color;
 }
 
 /**************************************
@@ -186,6 +196,7 @@ section {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0;
+    color: $color;
 
     span {
       display: inline-block;
@@ -193,7 +204,7 @@ section {
       margin-right: 10px;
       width: 40px;
       height: 3px;
-      border-top: solid 1px $color;
+      border-top: solid 1px $gray;
     }
   }
 
@@ -215,7 +226,7 @@ section {
 
 .btn {
   cursor: pointer;
-  color: $color;
+  color: $a;
   @include transitionCubic();
 
   &.btn-arrow {
@@ -229,13 +240,24 @@ section {
   }
 
   &:hover {
-    color: $dark-color;
-    @include transitionCubic();
+    // color: $dark-color;
+    // @include transitionCubic();
   } 
 }
 
 .btn-main {
   position: relative;
+  background-color: $dark-bg;
+  color: $dark-color;
+  font-style: italic;
+  
+  .arrow, 
+  .arrow.arrow-left:before,
+  .arrow.arrow-left:after,
+  .arrow.arrow-right:before,
+  .arrow.arrow-right:after {
+    background-color: $dark-color;
+  }
 
   &:before {
     content:'';
@@ -244,9 +266,9 @@ section {
     left: 0;
     width: 0;
     height: 100%;
-    background-color: rgba(1,1,1,1);
+    background-color: rgba(255,255,255, 0.3);
     @include transitionCubic();
-    z-index: -1;
+    z-index: 0;
   }
   
   &:hover {
