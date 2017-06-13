@@ -4,7 +4,7 @@
  * VARIABLES
  */
 
- @keyframes swipeLeft {
+@keyframes swipeLeft {
   0%  {
     visibility: visible;
     opacity: 1;
@@ -23,6 +23,58 @@
      -moz-animation: swipeLeft $t ease-in;
       -ms-animation: swipeLeft $t ease-in;
           animation: swipeLeft $t ease-in;
+}
+
+@keyframes bgAnimation {
+  0% {
+    left: -50%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes imgAnimation {
+  0% {
+    left: -25%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+@mixin imgAnimation($name, $t) {
+  -webkit-animation-name: $name;
+  animation-name: $name;
+
+  -webkit-animation-duration: $t;
+  animation-duration: $t;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@keyframes wheel-rotate {
+  0% {
+    @include rotate(0deg);
+  }
+
+  100% {
+    @include rotate(360deg);
+  }
+}
+
+.wheel-rotate {
+  -webkit-animation-name: wheel-rotate;
+  animation-name: wheel-rotate;
+
+  -webkit-animation-duration: 60s;
+  animation-duration: 60s;
 }
 
 
@@ -86,7 +138,7 @@
   }
 
   .banner-tags {
-    margin-top: 100px;
+    margin-top: 80px;
     div {
       width: auto;
       padding: 16px 50px 16px 50px;
@@ -109,5 +161,56 @@
     left: 0;
     width: calc(100% - #{$padding}*2);
   }
+}
+
+.background-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+
+  .wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  .border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    background-color: $dark-bg;
+  }
+}
+
+#park-bg {
+  position: absolute;
+  bottom: 38px;
+  // left: -50%;
+  height: 100%;
+  @include imgAnimation(bgAnimation,300s);
+}
+
+#park {
+  position: absolute;
+  bottom: 38px;
+  // left: -60%;
+  height: 100%;
+  @include imgAnimation(imgAnimation,150s);
+}
+
+#park-wheel {
+  position: absolute;
+  bottom: 6.25%;
+  left: 25%;
+  width: 30%;
+  height: auto;
 }
 

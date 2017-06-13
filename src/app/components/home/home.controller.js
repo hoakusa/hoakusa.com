@@ -8,16 +8,14 @@ import AppService from '../../app.service';
 class HomeController {
   constructor(HomeService, AppService, $interval, $timeout) {
     AppService.setTitle('hoakusa |');
-
     this.pages = HomeService.getPages();
     this.currentPage = 0;
 
+    this.setBanner(this.currentPage);
     this.timeinterval = $interval(this.showSlides.bind(this), 10000);
 
     this.$interval = $interval;
     this.$timeout = $timeout;
-
-    this.setBanner(this.currentPage);
   }
 
   showSlides() {

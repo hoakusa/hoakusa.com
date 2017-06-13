@@ -1,5 +1,21 @@
 <section class="home">
 
+  <div class="background-image" id="park-img">
+    <div class="wrapper">
+
+      <div id="park-bg"><img src="/img/park-bg.svg" /></div>
+      <div id="park">
+        <div class="wrapper">
+          <img src="/img/park.svg" />
+          <div id="park-wheel" class="wheel-rotate"><img src="/img/park-wheel.svg" /></div>
+        </div>
+      </div>
+
+      <div class="border"></div>
+
+    </div>
+  </div>
+
   <section class="banner-home" ng-repeat="page in home.pages"
     ng-class="{'active': home.isActive[page.id],
                'next'  : home.isNext[page.id],
