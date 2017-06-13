@@ -71,17 +71,17 @@ body {
 }
 
 @mixin moveX($q) {
-  -webkit-transform: translateX($q);
-     -moz-transform: translateX($q);
-      -ms-transform: translateX($q);
-          transform: translateX($q);
+  -webkit-transform: translate3d($q,0,0);
+     -moz-transform: translate3d($q,0,0);
+      -ms-transform: translate3d($q,0,0);
+          transform: translate3d($q,0,0);
 }
 
 @mixin moveY($q) {
-  -webkit-transform: translateY($q);
-     -moz-transform: translateY($q);
-      -ms-transform: translateY($q);
-          transform: translateY($q);
+  -webkit-transform: translate3d(0,$q,0);
+     -moz-transform: translate3d(0,$q,0);
+      -ms-transform: translate3d(0,$q,0);
+          transform: translate3d(0,$q,0);
 }
 
 a {
@@ -214,6 +214,18 @@ html, button, input, select, textarea,
      -moz-animation: slideLeft 1s ease-out;
       -ms-animation: slideLeft 1s ease-out;
           animation: slideLeft 1s ease-out;
+}
+
+@keyframes slideRight {
+  0%  {transform: translate3d(100px,0,0);}
+  100%{transform: translate3d(0,0,0);}
+}
+
+@mixin slideRight() {
+  -webkit-animation: slideRight 1s ease-out;
+     -moz-animation: slideRight 1s ease-out;
+      -ms-animation: slideRight 1s ease-out;
+          animation: slideRight 1s ease-out;
 }
 
 @keyframes openX {

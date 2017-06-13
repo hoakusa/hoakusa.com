@@ -40,6 +40,7 @@ $img-padding2: 250px;
         width: 0px;
         height: 3px;
         border-top: solid 1px $gray;
+        @include slideRight();
         @include transitionCubic();
       }
 
@@ -68,62 +69,60 @@ $img-padding2: 250px;
     }
 
     li:nth-child(odd) {
-      img {
+      .project-img a {
         margin-left: $img-padding;
-      }
+      }      
 
-      .project-partner, .project-category {
-        margin-left: calc(#{$img-padding} + 50px);
-      }
-
-      .btn {
-        margin-left: calc(#{$img-padding} + 50px - 24px);
-      }
-
-      h1 {
-        margin-left: calc(#{$img-padding} - 20px);
+      .project-detail.pure-u-md-1-2, .project-detail.pure-lg-1-2 {
+        margin-left: $img-padding;
+        width: calc(50% - #{$img-padding});
       }
     }
 
     li:nth-child(even) {
-      img {
+      .project-img a {
         margin-left: $img-padding2;
       }
 
-      .project-partner, .project-category {
-        margin-left: calc(#{$img-padding2} + 50px);
-      }
-
-      .btn {
-        margin-left: calc(#{$img-padding2} + 50px - 24px);
-      }
-
-      h1 {
-        margin-left: calc(#{$img-padding2} - 20px);
+      .project-detail.pure-u-md-1-2, .project-detail.pure-lg-1-2 {
+        margin-left: $img-padding2;
+        width: calc(50% - #{$img-padding2});
       }
     }
   }
 
   .project-item {
+
     h1 {
       margin-top: 20%;
+      margin-left: -20px;
     }
 
     .project-partner {
       margin-bottom: 8px;
+      padding-left: 50px;
     }
 
     .project-category {
       margin-top: 8px;
       margin-bottom: 24px;
+      padding-left: 50px;
     }
 
   }
 
   .project-img {
+    position: relative;
+
+    a {
+      display: block;
+      width: 100%;
+    }
+
     img {
       width: 100%;
       opacity: 1;
+      // @include moveY(100px);
       @include transition(0.55s, ease-out);
 
       &:hover {
@@ -132,7 +131,12 @@ $img-padding2: 250px;
     }
   }
 
+  .project-detail {
+    position: relative;
+  }
+
   .btn {
+    padding-left: 50px;
     font-style: italic;
   }
 }
