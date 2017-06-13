@@ -11,11 +11,11 @@ class HomeController {
     this.pages = HomeService.getPages();
     this.currentPage = 0;
 
-    this.setBanner(this.currentPage);
-    this.timeinterval = $interval(this.showSlides.bind(this), 10000);
+    this.isActive = [];  
+    this.isActive[0] = true;
 
+    this.timeinterval = $interval(this.showSlides.bind(this), 10000);
     this.$interval = $interval;
-    this.$timeout = $timeout;
   }
 
   showSlides() {

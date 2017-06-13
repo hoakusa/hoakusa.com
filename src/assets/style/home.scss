@@ -59,7 +59,7 @@
   animation-direction: alternate;
 }
 
-@keyframes wheel-rotate {
+@keyframes wheelRotate {
   0% {
     @include rotate(0deg);
   }
@@ -70,13 +70,12 @@
 }
 
 .wheel-rotate {
-  -webkit-animation-name: wheel-rotate;
-  animation-name: wheel-rotate;
+  -webkit-animation-name: wheelRotate;
+  animation-name: wheelRotate;
 
   -webkit-animation-duration: 60s;
   animation-duration: 60s;
 }
-
 
 /*
  * STYLE
