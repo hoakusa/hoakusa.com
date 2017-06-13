@@ -28,6 +28,7 @@ $letter-spacing: 0.08em;
 $selection-bg: rgba(171,189,177, .5);
 $selection-color: #ffffff;
 $arrow-color: $a;
+$arrow-color2: #ffba43;
 
 /**************************************
  * GLOBAL
@@ -251,10 +252,6 @@ section {
       border-top: solid 1px $gray;
     }
   }
-
-  .logo-bio {
-    
-  }
 }
 
 .changepage {
@@ -282,11 +279,6 @@ section {
       margin-right: 8px;
     }
   }
-
-  &:hover {
-    // color: $dark-color;
-    // @include transitionCubic();
-  } 
 }
 
 .btn-main {
