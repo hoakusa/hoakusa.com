@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import routing from './app.config';
+import WheelIndicator from 'wheel-indicator';
 
 // IMPORT STYLESHEETS
 import '../assets/lib/animate.css';
@@ -27,18 +28,32 @@ import AppService from './app.service';
 class AppController {
   constructor(AppService) {
     this.App = AppService;
+    
     this.smoothScroll();
   }
 
   smoothScroll() {
+    // Jquery
+
     var a=$(window);
     a.on("mousewheel DOMMouseScroll",function(b){
       b.preventDefault();
       b=b.originalEvent.wheelDelta/120||-b.originalEvent.detail/3;
-      b=a.scrollTop()-parseInt(150*b);
+      b=a.scrollTop()-parseInt(280*b);
       TweenMax.to(a,0.6,{scrollTo:{y:b,autoKill:!0},ease:Power2.easeOut,overwrite:5});
       return false;
     });
+
+    // let indicator = new WheelIndicator ({
+    //   elem: document.documentElement,
+    //   callback: (e) => {
+    //     // console.log(e.direction) // "up" or "down"
+
+        
+    //   }
+    // });
+
+    // indicator.getOption('preventMouse');
   }
 }
 
