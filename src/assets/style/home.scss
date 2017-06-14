@@ -77,6 +77,20 @@
   animation-duration: 60s;
 }
 
+@mixin bgzoom($t) {
+  -webkit-animation-name: kenburns-bottom-left;
+  animation-name: kenburns-bottom-left;
+
+  -webkit-animation-duration: $t;
+  animation-duration: $t;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
 /*
  * STYLE
  */
@@ -132,6 +146,7 @@
       clip-path: polygon(0% 0, 100% 0, 100% 100%, 20% 100%);
       img {
         height: 120%;
+        @include bgzoom(20s);
       }
     }
   }
