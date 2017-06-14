@@ -6,8 +6,10 @@ import HomeService from './home.service';
 import AppService from '../../app.service';
 
 class HomeController {
-  constructor(HomeService, AppService, $interval) {
+  constructor(HomeService, AppService, $interval, $state, $timeout) {
     AppService.setTitle('hoakusa |');
+    this.isWaiting  = false;
+
     this.pages = HomeService.getPages();
     this.currentPage = 0;
 
@@ -16,6 +18,8 @@ class HomeController {
 
     this.timeinterval = $interval(this.showSlides.bind(this), 10000);
     this.$interval = $interval;
+    this.$state = $state;
+    this.$timeout = $timeout;
   }
 
   showSlides() {
@@ -31,22 +35,6 @@ class HomeController {
   nextPage(id) {
     let nextId = (id < this.pages.length - 1) ? id + 1 : 0;
     return nextId;
-  }
-
-  goPrev(id) {
-    this.$interval.cancel(this.timeinterval);
-    this.currentPage = this.prevPage(id);
-    this.setBanner(this.prevPage(id));
-
-    this.timeinterval = this.$interval(this.showSlides.bind(this), 10000);
-  }
-
-  goNext(id) {
-    this.$interval.cancel(this.timeinterval);
-    this.currentPage = this.nextPage(id);
-    this.setBanner(this.nextPage(id));
-
-    this.timeinterval = this.$interval(this.showSlides.bind(this), 10000);
   }
 
   setBanner(id) {
@@ -65,9 +53,33 @@ class HomeController {
       else this.isPrev.push(false);
     }
   }
+
+  goPrev(id) {
+    this.$interval.cancel(this.timeinterval);
+    this.currentPage = this.prevPage(id);
+    this.setBanner(this.prevPage(id));
+
+    this.timeinterval = this.$interval(this.showSlides.bind(this), 10000);
+  }
+
+  goNext(id) {
+    this.$interval.cancel(this.timeinterval);
+    this.currentPage = this.nextPage(id);
+    this.setBanner(this.nextPage(id));
+
+    this.timeinterval = this.$interval(this.showSlides.bind(this), 10000);
+  }
+
+  goProject(url) {
+    this.isWaiting = true;
+    this.$timeout(() => {
+      this.$state.go('project', {name: url}, {reload: true});
+      this.isWaiting = false;
+    }, 2900); 
+  }
 }
 
-HomeController.$inject = ['HomeService', 'AppService', '$interval'];
+HomeController.$inject = ['HomeService', 'AppService', '$interval', '$state', '$timeout'];
 
 export default angular.module('app.home', [uirouter, HomeService, AppService])
   .config(routing)

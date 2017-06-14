@@ -30,7 +30,7 @@ class HomeService {
     this.pages.forEach((tab, i) => {
       tab.id = i;
       tab.image = this.ProjectService.getProjectById(tab.projectId).image;
-      tab.projectURL = '/work/' + this.ProjectService.getProjectById(tab.projectId).urls.project;
+      tab.projectURL = this.ProjectService.getProjectById(tab.projectId).urls.project;
     });
     return this.pages;
   }

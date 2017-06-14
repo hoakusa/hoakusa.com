@@ -26,7 +26,7 @@
         when-visible="work.elementIn">
 
       <div class="project-img pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">    
-        <a ng-href="/work/{{project.urls.project}}">
+        <a ng-click="work.goProject(project.urls.project)">
           <img ng-src="{{project.image}}" />
         </a>
       </div>
@@ -37,7 +37,7 @@
           <p class="project-partner">{{project.partner.name}}</p>
           <p class="project-category">{{project.time.month}} {{project.time.year}} - {{project.category_name}}</p>        
           
-          <a class="btn btn-arrow" ng-href="/work/{{project.urls.project}}">
+          <a class="btn btn-arrow" ng-click="work.goProject(project.urls.project)">
             View Project
             <span class="arrow arrow-right"></span>
           </a>
@@ -49,3 +49,4 @@
   </ul>
 
 </section>
+<div class="waiting-layer" ng-class="{'waiting-open':work.isWaiting}"></div>

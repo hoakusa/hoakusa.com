@@ -6,10 +6,15 @@ import ProjectService from '../../shared/project.service';
 import AppService from '../../app.service';
 
 class ProjectController {
-  constructor(ProjectService, AppService, $stateParams, $state) {
+  constructor(ProjectService, AppService, $stateParams, $state, $timeout, $anchorScroll) {
     let name = $stateParams.name;
+
+    $anchorScroll();
+    
+    this.isWaiting = false;
     this.ProjectService = ProjectService;
     this.$state = $state;
+    this.$timeout = $timeout;
 
     if (!!ProjectService.getProject(name)) {
       // If url param is existed.
@@ -20,16 +25,24 @@ class ProjectController {
     } else {
       // If url param isnt existed -> back to work page
       $state.go('work', {}, {reload: true});      
-    }   
+    }
   }
 
   goPrev() {
-    this.$state.go('project', {name: this.ProjectService.findPrev(this.data.id)}, {reload: true});
+    this.isWaiting = true;
+    this.$timeout(() => {
+      this.$state.go('project', {name: this.ProjectService.findPrev(this.data.id)}, {reload: true});
+      this.isWaiting = false;
+    }, 2900);
   }
 
   goNext() {
-    this.$state.go('project', {name: this.ProjectService.findNext(this.data.id)}, {reload: true});
-  }
+    this.isWaiting = true;
+    this.$timeout(() => {
+      this.$state.go('project', {name: this.ProjectService.findNext(this.data.id)}, {reload: true});
+      this.isWaiting = false;
+    }, 2900);
+}
 
   elementIn($el) {
     $el.addClass('fadeInUp');
@@ -37,10 +50,26 @@ class ProjectController {
       $el.css('opacity', 1);
     }, 900);
   }
+
+  goWork() {
+    this.isWaiting = true;
+    this.$timeout(() => {
+      this.$state.go('work', {}, {reload: true});
+      this.isWaiting = false;
+    }, 2900);
+  }
+
+  goProject(url) {
+    this.isWaiting = true;
+    this.$timeout(() => {
+      this.$state.go('project', {name: url}, {reload: true});
+      this.isWaiting = false;
+    }, 2900);
+  }
   
 }
 
-ProjectController.$inject = ['ProjectService', 'AppService', '$stateParams', '$state'];
+ProjectController.$inject = ['ProjectService', 'AppService', '$stateParams', '$state', '$timeout', '$anchorScroll'];
 
 export default angular.module('app.project', [uirouter, ProjectService, AppService])
   .config(routing)

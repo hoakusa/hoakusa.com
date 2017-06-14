@@ -7,7 +7,7 @@
        overlay="true"></div>
 
     <div class="container banner-title">
-      <a class="logo-text" href="/work"><span></span>Works</a>
+      <a class="logo-text" ng-click="project.goWork()"><span></span>Works</a>
       <h2 class="logo-bio">{{project.data.name}}</h2>
     </div>
     <div class="container changepage">
@@ -55,7 +55,7 @@
 
     <div class="pure-g">
       <a class="pure-u-1 pure-u-md-1-3 work-item" ng-repeat="work in project.relateWorks"
-          ng-href="/work/{{work.urls.project}}">
+          ng-click="project.goProject(work.urls.project)">
         <div class="project-img"><img ng-src="{{work.image}}"/></div>
         <p class="project-name">{{work.name}}</h3>
         <p class="project-category">{{work.time.month}} {{work.time.year}} - {{work.category_name}}</p>
@@ -69,3 +69,5 @@
   </div>
 
 </section>
+
+<div class="waiting-layer" ng-class="{'waiting-open':project.isWaiting}"></div>

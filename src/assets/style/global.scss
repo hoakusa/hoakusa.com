@@ -362,6 +362,42 @@ html, button, input, select, textarea,
           animation: closeY $t ease-out;
 }
 
+@keyframes loadingBar {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    width: 0;
+  }
+
+  15% {
+    opacity: 1;
+    width: 0;
+  }
+
+  50% {
+    opacity: 1;
+    width: 200px;
+  }
+
+  76.67% {
+    opacity: 0;
+    width: 200px;
+  }
+
+  100% {
+    opacity: 0;
+    width: 0;
+    visibility: hidden;
+  }
+}
+
+@mixin loadingBar($t) {
+  -webkit-animation: loadingBar $t ease-out;
+     -moz-animation: loadingBar $t ease-out;
+      -ms-animation: loadingBar $t ease-out;
+          animation: loadingBar $t ease-out;
+}
+
 /**************************************
  * GLOBAL
  **************************************/
@@ -374,31 +410,46 @@ main-menu {
 }
 
 .waiting-layer {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  color: $background;
+  height: 100vh;
+  background-color: $background;
   z-index: 10000;
+  visibility: hidden;
   &:after {
     content:'';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 0;
+    top: 40%;
+    left: calc(50% - 100px);
+    width: 0;
+    height: 1px;
     background-color: $dark-bg;
-    @include openX(1s);
-    -webkit-animation-delay: 1s;
-    animation-delay: 1s;
-
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
     z-index: 10001;
+  }
+}
+
+@keyframes waitingAnimation {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  33.33% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.waiting-open {
+  -webkit-animation: waitingAnimation 3s ease-out;
+  animation: waitingAnimation 3s ease-out;
+  &:after {
+    @include loadingBar(3s);
   }
 }
 

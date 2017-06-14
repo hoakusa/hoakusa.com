@@ -6,8 +6,9 @@ import ProjectService from '../../shared/project.service';
 import AppService from '../../app.service';
 
 class WorkController {
-  constructor(ProjectService, AppService, $timeout) {
+  constructor(ProjectService, AppService, $state, $timeout) {
     AppService.setTitle('Works |');
+    this.isWaiting = false;
     this.isActive = [true];
     this.title = "Works";
     this.isClose = false;
@@ -15,6 +16,7 @@ class WorkController {
 
     this.ProjectService = ProjectService;
     this.$timeout = $timeout;
+    this.$state = $state;
 
     this.projects = this.ProjectService.getProjectsAll();
     this.category = this.ProjectService.getCategory();
@@ -58,9 +60,17 @@ class WorkController {
       $el.css('opacity', 1);
     }, 900);
   }
+
+  goProject(url) {
+    this.isWaiting = true;
+    this.$timeout(() => {
+      this.$state.go('project', {name: url}, {reload: true});
+      this.isWaiting = false;
+    }, 2900); 
+  }
 }
 
-WorkController.$inject = ['ProjectService', 'AppService', '$timeout'];
+WorkController.$inject = ['ProjectService', 'AppService', '$state', '$timeout'];
 
 export default angular.module('app.work', [uirouter, ProjectService, AppService])
   .config(routing)

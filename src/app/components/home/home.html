@@ -1,4 +1,4 @@
-<section class="home">
+<section class="home fadeIn">
 
   <div class="background-image" id="park-img">
     <div class="wrapper">
@@ -27,7 +27,7 @@
        </div>
     </div>
 
-    <a class="btn btn-main btn-arrow discovery" ng-href="{{page.projectURL}}">
+    <a class="btn btn-main btn-arrow discovery" ng-click="home.goProject(page.projectURL)">
       View Project
       <span class="arrow arrow-right"></span>
     </a>
@@ -51,3 +51,5 @@
   </section>
 
 </section>
+
+<div class="waiting-layer" ng-class="{'waiting-open':home.isWaiting}"></div>
