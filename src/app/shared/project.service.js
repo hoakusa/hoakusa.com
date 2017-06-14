@@ -9,7 +9,10 @@ class ProjectService {
         name: 'Project 1',
         category: 0,
         tags: ['Interactive', 'Full stack Developer', 'AngularJS', 'React', 'Wordpress CMS'],
-        time: 'Feb 2017',
+        time: {
+          month: 'Feb',
+          year: '2017'
+        },
         partner: {
           name: 'Kiem Oy',
           url: 'http://kiem.fi'
@@ -32,7 +35,10 @@ class ProjectService {
         name: 'Web Service',
         category: 1,
         tags: ['Interactive', 'Full stack Developer', 'AngularJS', 'React', 'Wordpress CMS'],
-        time: 'Feb 2016',
+        time: {
+          month: 'Feb',
+          year: '2016'
+        },
         partner: {
           name: 'Kiem Oy',
           url: 'http://kiem.fi'
@@ -55,7 +61,10 @@ class ProjectService {
         name: 'iOS/Android Application',
         category: 2,
         tags: ['Mobile Interaction', 'Prototype', 'Invision', 'Frame.js', 'IoT app'],
-        time: 'Feb 2015',
+        time: {
+          month: 'Feb',
+          year: '2015'
+        },
         partner: {
           name: 'Kiem Oy',
           url: 'http://kiem.fi'
@@ -78,7 +87,10 @@ class ProjectService {
         name: 'Brand & Service',
         category: 0,
         tags: ['Concept', 'Wireframe', 'Brand Identity', 'Photoshop', 'Illustrator', 'Sketch App'],
-        time: 'Feb 2014',
+        time: {
+          month: 'Feb',
+          year: '2014'
+        },
         partner: {
           name: 'Kiem Oy',
           url: 'http://kiem.fi'

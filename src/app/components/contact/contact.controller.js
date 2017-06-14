@@ -11,10 +11,17 @@ class ContactController {
     this.links = SocialLinkService.getLinks();
     
     this.title = 'Contact';
-    this.image = 'https://image.ibb.co/cdT2tF/G743bff.jpg';
+    this.image = '/img/contactbg.jpg';
     this.email = 'anpham.hn910@gmail.com';
     this.cv    = '/';
     this.certification = 'https://www.freecodecamp.com/hoakusa/front-end-certification';
+  }
+
+  elementIn($el) {
+    $el.addClass('fadeInUp');
+    setTimeout(() => {
+      $el.css('opacity', 1);
+    }, 900);
   }
   
 }

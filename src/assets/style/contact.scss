@@ -17,7 +17,8 @@
 
   .banner-img {
     position: relative;
-    height: 350px;
+    height: 430px;
+    background-color: $background;
     background-size: 100% auto;
     background-position: center center;
     background-repeat: no-repeat;
@@ -25,7 +26,7 @@
 
   .start-project {
     margin: 0 auto;
-    margin-top: -50px;
+    margin-top: -150px;
     display: block;
     width: 100%;
     color: $dark-color;
@@ -52,6 +53,10 @@
   .skills {
     width: 640px;
     margin: 0 auto 40px auto;
+
+    .wrapper {
+      opacity: 0;
+    }
   }
 
   .title {

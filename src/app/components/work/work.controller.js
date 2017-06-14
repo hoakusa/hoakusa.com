@@ -38,7 +38,7 @@ class WorkController {
     $el.addClass('fadeInUp');
     setTimeout(() => {
       $el.css('opacity', 1);
-    }, 998);
+    }, 900);
   }
 }
 

@@ -6,10 +6,10 @@ import ProjectService from '../../shared/project.service';
 import AppService from '../../app.service';
 
 class ProjectController {
-  constructor(ProjectService, AppService, $stateParams, $state, $location) {
+  constructor(ProjectService, AppService, $stateParams, $state) {
     let name = $stateParams.name;
     this.ProjectService = ProjectService;
-    this.$location = $location;
+    this.$state = $state;
 
     if (!!ProjectService.getProject(name)) {
       // If url param is existed.
@@ -24,18 +24,23 @@ class ProjectController {
   }
 
   goPrev() {
-    let nextPath = '/work/' + this.ProjectService.findPrev(this.data.id);
-    this.$location.url(nextPath);  
+    this.$state.go('project', {name: this.ProjectService.findPrev(this.data.id)}, {reload: true});
   }
 
   goNext() {
-    let nextPath = '/work/' + this.ProjectService.findNext(this.data.id);
-    this.$location.url(nextPath);
+    this.$state.go('project', {name: this.ProjectService.findNext(this.data.id)}, {reload: true});
+  }
+
+  elementIn($el) {
+    $el.addClass('fadeInUp');
+    setTimeout(() => {
+      $el.css('opacity', 1);
+    }, 900);
   }
   
 }
 
-ProjectController.$inject = ['ProjectService', 'AppService', '$stateParams', '$state', '$location'];
+ProjectController.$inject = ['ProjectService', 'AppService', '$stateParams', '$state'];
 
 export default angular.module('app.project', [uirouter, ProjectService, AppService])
   .config(routing)
