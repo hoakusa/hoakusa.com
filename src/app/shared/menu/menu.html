@@ -23,6 +23,8 @@
 
       <li class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 menu-item"
           ng-repeat="tab in menu.tabs">
+        <div class="borderV" ng-class="{'openV': menu.isOpen, 'closeV': menu.isClose}"></div>
+
         <a ng-click="menu.goto(tab.state)">
           <div class="menu-img" ng-style="{'background-image':'url({{tab.image}})'}"></div>
           <h4 class="menu-id">{{tab.id}}</h4>
@@ -33,6 +35,8 @@
     </ul>
 
     <div class="menu-footer">
+      <div class="border" ng-class="{'openH': menu.isOpen, 'closeH': menu.isClose}" id="borderH"></div>
+
       <div class="container">
         <div class="copyright">Copyright @ An Pham 2017. All right reserved.</div>
         <div class="social-link">

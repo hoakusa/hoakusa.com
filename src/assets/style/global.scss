@@ -137,8 +137,7 @@ html, button, input, select, textarea,
 }
 
 .moveright {
-  -webkit-animation: moveright 0.55s cubic-bezier(.25,.46,.45,.94);
-          animation: moveright 0.55s cubic-bezier(.25,.46,.45,.94);
+  @include moveright(0.55s);
 }
 
 @keyframes moveleft {
@@ -156,8 +155,7 @@ html, button, input, select, textarea,
 }
 
 .moveleft {
-  -webkit-animation: moveleft 0.55s cubic-bezier(.25,.46,.45,.94);
-          animation: moveleft 0.55s cubic-bezier(.25,.46,.45,.94);
+  @include moveleft(0.55s);
 }
 
 @keyframes fadeIn {
@@ -173,10 +171,7 @@ html, button, input, select, textarea,
 }
 
 .fadeIn {
-  -webkit-animation: fadeIn 1s ease-out;
-     -moz-animation: fadeIn 1s ease-out;
-      -ms-animation: fadeIn 1s ease-out;
-          animation: fadeIn 1s ease-out;
+  @include fadeIn(1s);
 }
 
 @keyframes fadeInLeft {
@@ -228,10 +223,7 @@ html, button, input, select, textarea,
 }
 
 .fadeOut {
-  -webkit-animation: fadeOut 1s ease-out;
-     -moz-animation: fadeOut 1s ease-out;
-      -ms-animation: fadeOut 1s ease-out;
-          animation: fadeOut 1s ease-out;
+  @include fadeOut(1s);
 }
 
 @keyframes fadeOutRight {
@@ -303,10 +295,7 @@ html, button, input, select, textarea,
 }
 
 .slideUp {
-  -webkit-animation: slideUp 1s ease-out;
-     -moz-animation: slideUp 1s ease-out;
-      -ms-animation: slideUp 1s ease-out;
-          animation: slideUp 1s ease-out;
+  @include slideUp();
 }
 
 @keyframes openX {
@@ -319,10 +308,58 @@ html, button, input, select, textarea,
 }
 
 @mixin openX($t) {
-  -webkit-animation: openX $t cubic-bezier(.25,.46,.45,.94);
-     -moz-animation: openX $t cubic-bezier(.25,.46,.45,.94);
-      -ms-animation: openX $t cubic-bezier(.25,.46,.45,.94);
-          animation: openX $t cubic-bezier(.25,.46,.45,.94);
+  -webkit-animation: openX $t ease-out;
+     -moz-animation: openX $t ease-out;
+      -ms-animation: openX $t ease-out;
+          animation: openX $t ease-out;
+}
+
+@keyframes closeX {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@mixin closeX($t) {
+  -webkit-animation: closeX $t ease-out;
+     -moz-animation: closeX $t ease-out;
+      -ms-animation: closeX $t ease-out;
+          animation: closeX $t ease-out;
+}
+
+@keyframes openY {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@mixin openY($t) {
+  -webkit-animation: openY $t ease-out;
+     -moz-animation: openY $t ease-out;
+      -ms-animation: openY $t ease-out;
+          animation: openY $t ease-out;
+}
+
+@keyframes closeY {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+@mixin closeY($t) {
+  -webkit-animation: closeY $t ease-out;
+     -moz-animation: closeY $t ease-out;
+      -ms-animation: closeY $t ease-out;
+          animation: closeY $t ease-out;
 }
 
 /**************************************
