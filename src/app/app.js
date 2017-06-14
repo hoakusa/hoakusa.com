@@ -30,21 +30,6 @@ import AppService from './app.service';
 class AppController {
   constructor(AppService) {
     this.App = AppService;
-    
-    this.smoothScroll();
-  }
-
-  smoothScroll() {
-
-    var a=$(window);
-    a.on("mousewheel DOMMouseScroll",function(b){
-      b.preventDefault();
-      b=b.originalEvent.wheelDelta/120||-b.originalEvent.detail/3;
-      b=a.scrollTop()-parseInt(280*b);
-      TweenMax.to(a,0.6,{scrollTo:{y:b,autoKill:!0},ease:Power2.easeOut,overwrite:5});
-      return false;
-    });
-
   }
 }
 

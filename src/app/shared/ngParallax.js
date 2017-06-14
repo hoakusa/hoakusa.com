@@ -57,9 +57,11 @@ export default angular.module('directives.ngParallax',[]).directive('ngParallax'
               var alpha = (scrollTop / window.innerHeight)*0.6;
 
               if(alpha == 0){
+                bgObj.style.visibility = 'hidden';
                 bgObj.style.backgroundColor = 'rgba(1,1,1,' + 0 + ')';
               }
               else{
+                bgObj.style.visibility = 'visible';
                 bgObj.style.backgroundColor = 'rgba(1,1,1,' + alpha + ')';
               }
 

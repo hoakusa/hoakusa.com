@@ -73,8 +73,14 @@
   -webkit-animation-name: wheelRotate;
   animation-name: wheelRotate;
 
-  -webkit-animation-duration: 60s;
-  animation-duration: 60s;
+  -webkit-animation-duration: 90s;
+  animation-duration: 90s;
+
+   -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
 }
 
 @mixin bgzoom($t) {
@@ -229,7 +235,7 @@
   bottom: 38px;
   // left: -60%;
   height: 100%;
-  @include imgAnimation(imgAnimation,150s);
+  @include imgAnimation(imgAnimation,120s);
 }
 
 #park-wheel {
