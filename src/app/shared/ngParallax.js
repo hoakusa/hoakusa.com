@@ -42,10 +42,10 @@ export default angular.module('directives.ngParallax',[]).directive('ngParallax'
                 speed = speed * .10
               }
               if(speed == 0){
-                bgObj.style.backgroundPosition = '0% '+ (0 - scope.top) + '%';
+                bgObj.style.backgroundPosition = 'center '+ (0 - scope.top) + '%';
               }
               else{
-                bgObj.style.backgroundPosition = '0% '+ (speed - scope.top) + '%';
+                bgObj.style.backgroundPosition = 'center '+ (speed - scope.top) + '%';
               }
 
           }

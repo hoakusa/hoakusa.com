@@ -12,6 +12,8 @@ $img-padding2: 250px;
  */
 
 .work {
+  width: 100%;
+  overflow-x: hidden;
   .category-list {
     position: fixed;
     top: 20vh;

@@ -1,4 +1,4 @@
-<section class="work">
+<section class="work fadeIn">
 
   <div class="container banner-title">
     <h5 class="logo-text"><span></span>{{work.title}}</h5>
@@ -19,10 +19,11 @@
     </li>
   </ul>
 
-  <ul class="project-list">
+  <ul class="project-list" 
+    ng-class="{'fadeOutRight': work.isClose, 'fadeInUp': work.isOpen}">
 
     <li class="project-item pure-g" ng-repeat="project in work.projects"
-        when-visible="work.projectItemIn">
+        when-visible="work.elementIn">
 
       <div class="project-img pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">    
         <a ng-href="/work/{{project.urls.project}}">

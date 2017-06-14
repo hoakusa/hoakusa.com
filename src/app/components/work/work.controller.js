@@ -6,11 +6,15 @@ import ProjectService from '../../shared/project.service';
 import AppService from '../../app.service';
 
 class WorkController {
-  constructor(ProjectService, AppService) {
+  constructor(ProjectService, AppService, $timeout) {
     AppService.setTitle('Works |');
     this.isActive = [true];
     this.title = "Works";
+    this.isClose = false;
+    this.isOpen = false;
+
     this.ProjectService = ProjectService;
+    this.$timeout = $timeout;
 
     this.projects = this.ProjectService.getProjectsAll();
     this.category = this.ProjectService.getCategory();
@@ -21,20 +25,34 @@ class WorkController {
   }
 
   getProjectsAll() {
+    this.isClose = true;
+
     for (let i = 0; i < this.isActive.length; i++) {
       this.isActive[i] = (i === 0) ? true : false;
     }    
-    this.projects = this.ProjectService.getProjectsAll();
+    
+    this.$timeout(() => {
+      this.isClose = false;
+      this.isOpen = true;
+      this.projects = this.ProjectService.getProjectsAll();
+    }, 700);
   }
 
   getProjects(param) {
+    this.isClose = true;
+
     for (let i = 0; i < this.isActive.length; i++) {
       this.isActive[i] = (i === param + 1) ? true : false;
     }
-    this.projects = this.ProjectService.getProjects(param);
+
+    this.$timeout(() => {
+      this.isClose = false;
+      this.isOpen = true;
+      this.projects = this.ProjectService.getProjects(param);
+    }, 700);
   }
 
-  projectItemIn($el) {
+  elementIn($el) {
     $el.addClass('fadeInUp');
     setTimeout(() => {
       $el.css('opacity', 1);
@@ -42,7 +60,7 @@ class WorkController {
   }
 }
 
-WorkController.$inject = ['ProjectService', 'AppService'];
+WorkController.$inject = ['ProjectService', 'AppService', '$timeout'];
 
 export default angular.module('app.work', [uirouter, ProjectService, AppService])
   .config(routing)
