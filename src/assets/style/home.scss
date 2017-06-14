@@ -125,10 +125,11 @@
 
     .banner-img {
       position: relative;
-      margin-left: 20%;
+      margin-left: 30%;
       height: 100%;
-      border-bottom-left-radius: 1000px;
       overflow: hidden;
+      -webkit-clip-path: polygon(0% 0, 100% 0, 100% 100%, 20% 100%);
+      clip-path: polygon(0% 0, 100% 0, 100% 100%, 20% 100%);
       img {
         height: 120%;
       }

@@ -21,7 +21,9 @@
 
   <ul class="project-list">
 
-    <li class="project-item pure-g" ng-repeat="project in work.projects">
+    <li class="project-item pure-g" ng-repeat="project in work.projects"
+        when-visible="work.projectItemIn">
+
       <div class="project-img pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">    
         <a ng-href="/work/{{project.urls.project}}">
           <img ng-src="{{project.image}}" />
@@ -29,14 +31,16 @@
       </div>
 
       <div class="project-detail pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
-        <h1>{{project.name}}</h1>
-        <p class="project-partner">{{project.partner.name}}</p>
-        <p class="project-category">{{project.time}} - {{project.category_name}}</p>        
-        
-        <a class="btn btn-arrow" ng-href="/work/{{project.urls.project}}">
-          View Project
-          <span class="arrow arrow-right"></span>
-        </a>
+        <div class="wrapper">
+          <h1>{{project.name}}</h1>
+          <p class="project-partner">{{project.partner.name}}</p>
+          <p class="project-category">{{project.time}} - {{project.category_name}}</p>        
+          
+          <a class="btn btn-arrow" ng-href="/work/{{project.urls.project}}">
+            View Project
+            <span class="arrow arrow-right"></span>
+          </a>
+        </div>
       </div>
 
     </li>

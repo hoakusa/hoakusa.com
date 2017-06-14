@@ -92,9 +92,9 @@ $img-padding2: 250px;
   }
 
   .project-item {
-
+    opacity: 0;
     h1 {
-      margin-top: 20%;
+      margin-top: 100px;
       margin-left: -20px;
     }
 
@@ -122,7 +122,6 @@ $img-padding2: 250px;
     img {
       width: 100%;
       opacity: 1;
-      // @include moveY(100px);
       @include transition(0.55s, ease-out);
 
       &:hover {
@@ -133,6 +132,10 @@ $img-padding2: 250px;
 
   .project-detail {
     position: relative;
+  }
+
+  .wrapper {
+
   }
 
   .btn {

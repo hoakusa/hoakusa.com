@@ -31,8 +31,14 @@ class WorkController {
     for (let i = 0; i < this.isActive.length; i++) {
       this.isActive[i] = (i === param + 1) ? true : false;
     }
-
     this.projects = this.ProjectService.getProjects(param);
+  }
+
+  projectItemIn($el) {
+    $el.addClass('fadeInUp');
+    setTimeout(() => {
+      $el.css('opacity', 1);
+    }, 998);
   }
 }
 

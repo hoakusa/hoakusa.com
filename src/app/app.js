@@ -1,7 +1,9 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import routing from './app.config';
-import WheelIndicator from 'wheel-indicator';
+
+import ScrollAnimate from './shared/angular-scroll-animate';
+import ngParallax from './shared/ngParallax';
 
 // IMPORT STYLESHEETS
 import '../assets/lib/animate.css';
@@ -33,7 +35,6 @@ class AppController {
   }
 
   smoothScroll() {
-    // Jquery
 
     var a=$(window);
     a.on("mousewheel DOMMouseScroll",function(b){
@@ -44,22 +45,12 @@ class AppController {
       return false;
     });
 
-    // let indicator = new WheelIndicator ({
-    //   elem: document.documentElement,
-    //   callback: (e) => {
-    //     // console.log(e.direction) // "up" or "down"
-
-        
-    //   }
-    // });
-
-    // indicator.getOption('preventMouse');
   }
 }
 
 AppController.$inject = ['AppService'];
 
-export default angular.module('app', [uirouter, Menu, menu, Home, Work, Project, Contact, AppService])
+export default angular.module('app', [uirouter, Menu, menu, Home, Work, Project, Contact, AppService, ScrollAnimate, ngParallax])
   // .directive('app', app)
   .controller('AppController', AppController)
   .config(routing);

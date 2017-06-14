@@ -6,7 +6,7 @@ import HomeService from './home.service';
 import AppService from '../../app.service';
 
 class HomeController {
-  constructor(HomeService, AppService, $interval, $timeout) {
+  constructor(HomeService, AppService, $interval) {
     AppService.setTitle('hoakusa |');
     this.pages = HomeService.getPages();
     this.currentPage = 0;
@@ -67,7 +67,7 @@ class HomeController {
   }
 }
 
-HomeController.$inject = ['HomeService', 'AppService', '$interval', '$timeout'];
+HomeController.$inject = ['HomeService', 'AppService', '$interval'];
 
 export default angular.module('app.home', [uirouter, HomeService, AppService])
   .config(routing)
