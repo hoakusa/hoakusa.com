@@ -4,6 +4,7 @@ import SocialLinkService from '../social-link.service';
 
 class MenuController {
   constructor(MenuService, SocialLinkService, $state, $timeout) {
+    this.isWaiting = false;
     this.isOpen   = false;
     this.isClose  = false;
     this.$state   = $state;
@@ -17,7 +18,12 @@ class MenuController {
 
   goto(state) {
     this.close();
-    this.$state.go(state, {}, {reload: true});
+    
+    this.isWaiting = true;
+    this.$timeout(() => {
+      this.$state.go(state, {}, {reload: true});
+      this.isWaiting = false;
+    }, 2900);
   }
 
   open() {
@@ -35,14 +41,10 @@ class MenuController {
   close() {
     this.isOpen = false;
     this.isClose = true;
-
+    
     this.$timeout(() => {
       document.getElementById('menu').style.left = '-100%';
-      let arr = document.querySelectorAll('.borderV');
-      for (let i = 0; i < arr.length; i++) {
-        arr[i].style.height = '0';
-      }
-    }, 900);
+    }, 300);
   }
 }
 

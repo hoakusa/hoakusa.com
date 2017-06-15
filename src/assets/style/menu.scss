@@ -82,6 +82,7 @@ $icon: 40px;
   background-color: $dark-bg;
   color: $dark-color;
   @include transitionCubic();
+  z-index: 1000;
 
   a {
     color: $dark-color;
@@ -220,7 +221,7 @@ $icon: 40px;
 }
 
 .closeV {
-  @include closeY(1s);
+  @include closeY(0.4s);
 }
 
 .openH {
@@ -229,6 +230,4 @@ $icon: 40px;
 
 .closeH {
   @include closeX(1s);
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
 }
