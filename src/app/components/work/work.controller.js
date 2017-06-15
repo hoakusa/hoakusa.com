@@ -68,6 +68,10 @@ class WorkController {
       this.isWaiting = false;
     }, 2900); 
   }
+
+  lastLetter(str) {
+    return str.charAt(str.length() - 1);
+  }
 }
 
 WorkController.$inject = ['ProjectService', 'AppService', '$state', '$timeout'];

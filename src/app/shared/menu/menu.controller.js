@@ -44,6 +44,10 @@ class MenuController {
     
     this.$timeout(() => {
       document.getElementById('menu').style.left = '-100%';
+      let arr = document.querySelectorAll('.borderV');
+      for (let i = 0; i < arr.length; i++) {
+        arr[i].style.height = '0';
+      }
     }, 300);
   }
 }
