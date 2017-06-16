@@ -11,10 +11,22 @@ $icon: 40px;
  */
 
 #menu-bar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
+}
+
+#logo {
+  display: block;
+  position: fixed;
+  top: 40px;
+  right: $padding;
+  width: 72px;
+  z-index: 998;
+  img {
+    width: 100%;
+  }
 }
 
 .menu-icon {
@@ -51,7 +63,7 @@ $icon: 40px;
 
 // Animation
 .menu-hamburger {
-  &:hover {
+  &:hover, &:active {
     div {
       @include moveright(0.55s);
     }
@@ -69,7 +81,7 @@ $icon: 40px;
 }
 
 .menu-close {
-  &:hover {
+  &:hover, &:active {
     .menu-l {
       @include rotate(135deg);
     }
@@ -237,4 +249,163 @@ $icon: 40px;
 
 .closeH {
   @include closeX(1s);
+}
+
+@media screen and (max-width: 1023px) {
+  
+  .menu-img {
+    background-position: 0px center;
+  }
+
+  .menu-item {
+    height: calc((100vh - #{$icon} - 100px - 46px - 23px - 16px - 56px - 140px)/2);
+
+    .border {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    a h3 {
+      margin-top: 80px;
+    }
+
+    a:hover {
+      .menu-img {
+        background-position: -30px center;
+      }
+    }
+  }
+
+  .menu-footer {
+    height: 140px;
+
+    .copyright {
+      display: block;
+    }
+    .social-link {
+      margin-top: 16px;
+      display: block;
+      float: left;
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  #logo {
+    width: 52px;
+  }
+
+  .menu-img {
+    background-size: auto 100%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .menu-img {
+    background-size: 150% auto;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .menu-full {
+    .logo-text {
+      margin-top: 40px;
+      font-size: 1.5rem;
+    }
+  }
+
+  .menu-tabs {
+    margin-top: 24px;
+  }
+
+  .menu-tabs li:not(:last-child) {
+    a {
+      border-bottom: solid 1px rgba(255,255,255,0);
+    }
+  }
+
+  .menu-item {
+    height: calc((100vh - #{$icon} - 40px - 46px - 23px - 16px - 24px - 100px)/4);
+
+    a {
+      h2,h3 {
+        display: inline-block;
+        margin-top: 10%;
+        margin-bottom: 0;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+    }
+
+    a:hover {
+      .menu-img {
+        background-position: -30px center;
+      }
+    }
+  }
+
+  .menu-footer {
+    height: 100px;
+
+    .container {
+      padding-top: 24px;
+    }
+
+    .copyright {
+      display: block;
+    }
+    .social-link {
+      margin-top: 8px;
+      display: block;
+      float: left;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .menu-full {
+    .logo-text {
+      margin-top: 40px;
+      font-size: 1.25rem;
+    }
+  }
+
+  .menu-tabs {
+    margin-top: 24px;
+  }
+
+  .menu-item {
+    height: calc((100vh - #{$icon} - 40px - 46px - 23px - 16px - 24px - 72px)/4);
+    a h2, a h3 {
+        display: inline-block;
+        margin-top: 8%;
+        margin-bottom: 0;
+      }
+  }
+
+  .menu-footer {
+    height: 72px;
+    font-size: 0.6875rem;
+
+    .container {
+      padding-top: 16px;
+    }
+
+    .copyright {
+      display: block;
+    }
+    .social-link {
+      margin-top: 8px;
+      display: block;
+      float: left;
+    }
+  }
 }

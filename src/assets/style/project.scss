@@ -133,11 +133,62 @@
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+}
 
-  a:hover {
-    // img {
-    //   opacity: 0.8;
-    // }
+@media screen and (max-width: 1023px) {
+  section .logo-text {
+    font-size: 14px;
+  }
+
+  .project {
+    .banner-project .banner-title a {
+      width: 150px;
+      &.logo-text {
+        font-size: 14px;
+      }
+      
+    }
+
+    .project-detail {
+      .col-l {
+        margin: 72px 0;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      .col-r .description {
+        margin: 0;
+        padding: 56px $padding;
+      }
+    }
+  }
+  .related-work {
+    p {
+      padding: 0 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .project {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .banner-project .changepage {
+      width: calc(100% - 20px*2);
+      bottom: 20px;
+    }
+
+    .project-detail .col-r .description {
+      padding: 56px 20px;
+    }
+  }
+
+  .related-work {
+    margin-top: 100px;
   }
 
 }

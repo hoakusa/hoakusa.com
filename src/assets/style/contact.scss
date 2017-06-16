@@ -18,6 +18,7 @@
   .banner-img {
     position: relative;
     height: 410px;
+    width: 100%;
     background-color: $background;
     background-size: auto 410px;
     background-position: center center;
@@ -108,4 +109,61 @@ footer {
   text-align: center;
   font-size: 0.875rem;
   padding: 20px 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .container-main {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contact .skills {
+    width: calc(100% - 50px*2);
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .contact {
+    .banner-img {
+      height: 270px;
+      background-size: auto 270px;
+    }
+
+    .cv {
+      margin-top: 20px;
+    }
+
+    .title {
+      margin-top: 30px;
+      padding: 15px 0;
+    }
+
+    .skills {
+      width: calc(100% - 20px*2);
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+
+    .start-project {
+      font-size: 1rem;
+      margin-top: -70px;
+    }
+
+    .start-project.btn-arrow {
+      padding: 24px 0;
+    }
+
+    .btn-arrow {
+      padding: 12px 20px;
+    }
+
+    .certificate {
+      width: calc(100% - 48px);
+    }
+
+    
+  }
 }

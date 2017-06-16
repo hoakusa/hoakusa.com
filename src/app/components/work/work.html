@@ -25,13 +25,13 @@
     <li class="project-item pure-g" ng-repeat="project in work.projects"
         when-visible="work.elementIn">
 
-      <div class="project-img pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">    
+      <div class="project-img pure-u-1 pure-u-md-3-5 pure-u-lg-1-2">    
         <a ng-click="work.goProject(project.urls.project)">
           <img ng-src="{{project.image}}" />
         </a>
       </div>
 
-      <div class="project-detail pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+      <div class="project-detail pure-u-1 pure-u-md-2-5 pure-u-lg-1-2">
         <div class="wrapper">
           <h1>{{project.name}}</h1>
           <p class="project-partner">{{project.partner.name}}</p>

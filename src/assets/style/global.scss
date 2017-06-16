@@ -394,7 +394,7 @@ html, button, input, select, textarea,
 
 @keyframes textZoomIn {
   0% {
-    letter-spacing: 10px;
+    letter-spacing: 8px;
   }
   100% {
     letter-spacing: 2px;
@@ -457,18 +457,6 @@ html, button, input, select, textarea,
   animation: waitingAnimation 3s ease-out;
   &:after {
     @include loadingBar(3s);
-  }
-}
-
-#logo {
-  display: block;
-  position: absolute;
-  top: 40px;
-  right: $padding;
-  width: 72px;
-  z-index: 998;
-  img {
-    width: 100%;
   }
 }
 
@@ -651,3 +639,33 @@ section {
  * ---------------------------------------------- */
 
 @-webkit-keyframes kenburns-bottom-left{0%{-webkit-transform:scale(1) translate(0,0);transform:scale(1) translate(0,0);-webkit-transform-origin:16% 84%;transform-origin:16% 84%}100%{-webkit-transform:scale(1.25) translate(-20px,15px);transform:scale(1.25) translate(-20px,15px);-webkit-transform-origin:left bottom;transform-origin:left bottom}}@keyframes kenburns-bottom-left{0%{-webkit-transform:scale(1) translate(0,0);transform:scale(1) translate(0,0);-webkit-transform-origin:16% 84%;transform-origin:16% 84%}100%{-webkit-transform:scale(1.25) translate(-20px,15px);transform:scale(1.25) translate(-20px,15px);-webkit-transform-origin:left bottom;transform-origin:left bottom}}
+
+@media screen and (max-width: 575px) {
+
+  body, body p {
+    font-size: 0.875rem;
+  }
+
+  body .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #logo {
+    top: 30px;
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  
+  #logo {
+    top: 30px;
+    right: 20px;
+    width: 48px;
+  }
+
+  section .banner-title {
+    padding-top: 140px;
+  }
+}
