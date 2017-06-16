@@ -4,7 +4,10 @@
  * VARIABLES
  **************************************/
 
-html { font-size: 62.5%; }
+html { 
+  font-size: 62.5%;
+  background: #fefefe;
+}
 
 $background: #fefefe;
 $color: #3F4F5E;
@@ -172,6 +175,10 @@ html, button, input, select, textarea,
 
 .fadeIn {
   @include fadeIn(1s);
+}
+
+.fadeInSlow {
+  @include fadeIn(2s);
 }
 
 @keyframes fadeInLeft {

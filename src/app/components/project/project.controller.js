@@ -9,6 +9,7 @@ class ProjectController {
   constructor(ProjectService, AppService, $stateParams, $state, $timeout, $anchorScroll) {
     let name = $stateParams.name;
 
+    // always scroll to top
     $anchorScroll();
     
     this.isWaiting = false;

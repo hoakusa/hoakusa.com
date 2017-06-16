@@ -2,11 +2,10 @@ import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import routing from './app.config';
 
-import ScrollAnimate from './shared/angular-scroll-animate';
-import ngParallax from './shared/ngParallax';
+import ScrollAnimate from '../assets/javascript/angular-scroll-animate';
+import ngParallax from '../assets/javascript/ngParallax';
 
 // IMPORT STYLESHEETS
-import '../assets/lib/animate.css';
 import '../assets/style/app.scss';
 
 // IMPORT COMPONENTS
@@ -28,12 +27,15 @@ import AppService from './app.service';
 // };
 
 class AppController {
-  constructor(AppService) {
+  constructor(AppService, $timeout) {
     this.App = AppService;
+    $timeout(() => {
+      document.getElementById('logo-img').style.display = 'block';
+    },600);
   }
 }
 
-AppController.$inject = ['AppService'];
+AppController.$inject = ['AppService', '$timeout'];
 
 export default angular.module('app', [uirouter, Menu, menu, Home, Work, Project, Contact, AppService, ScrollAnimate, ngParallax])
   // .directive('app', app)
