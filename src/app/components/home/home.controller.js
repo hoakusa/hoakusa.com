@@ -10,8 +10,6 @@ import AppService from '../../app.service';
 class HomeController {
   constructor(HomeService, AppService, $interval, $state, $timeout) {
     AppService.setTitle('hoakusa |');
-    this.isWaiting  = false;
-
     this.pages = HomeService.getPages();
     this.currentPage = 0;
 

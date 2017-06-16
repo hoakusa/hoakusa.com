@@ -10,6 +10,13 @@ $icon: 40px;
  * STYLE
  */
 
+#menu-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
 .menu-icon {
   display: block;
   width: 36px;
