@@ -17,9 +17,13 @@
   </div>
 
   <section class="banner-home" ng-repeat="page in home.pages"
-    ng-class="{'active': home.isActive[page.id],
-               'next'  : home.isNext[page.id],
-               'prev'  : home.isPrev[page.id]}">
+        ng-class="{'active': home.isActive[page.id],
+                   'next'  : home.isNext[page.id],
+                   'prev'  : home.isPrev[page.id],
+                   'prevLeft': home.isPrev[page.id] === 1,
+                   'prevRight': home.isPrev[page.id] === 2}"
+        ng-swipe-right="home.goPrev(page.id)"
+        ng-swipe-left="home.goNext(page.id)">
 
     <div class="banner-project">
        <div class="banner-img">

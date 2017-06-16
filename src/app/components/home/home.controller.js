@@ -1,5 +1,7 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
+import ngTouch from 'angular-touch';
+
 import routing from './home.routes';
 
 import HomeService from './home.service';
@@ -23,7 +25,7 @@ class HomeController {
   }
 
   showSlides() {
-    this.setBanner(this.nextPage(this.currentPage));
+    this.setBanner(this.nextPage(this.currentPage), 1);
     this.currentPage = this.nextPage(this.currentPage);
   }
 
@@ -37,7 +39,7 @@ class HomeController {
     return nextId;
   }
 
-  setBanner(id) {
+  setBanner(id, direction) { // 0:left 1:right
     this.isActive = [];
     this.isNext   = [];
     this.isPrev   = [];
@@ -46,10 +48,13 @@ class HomeController {
       if (i === id) this.isActive.push(true);
       else this.isActive.push(false);
 
-      if (i === this.nextPage(id)) this.isNext.push(true);
+      if (i === this.nextPage(id) && direction === 0) {
+        this.isNext.push(true);
+        this.isPrev.push(1);
+      }
       else this.isNext.push(false);
 
-      if (i === this.prevPage(id)) this.isPrev.push(true);
+      if (i === this.prevPage(id) && direction === 1) this.isPrev.push(2);
       else this.isPrev.push(false);
     }
   }
@@ -57,7 +62,7 @@ class HomeController {
   goPrev(id) {
     this.$interval.cancel(this.timeinterval);
     this.currentPage = this.prevPage(id);
-    this.setBanner(this.prevPage(id));
+    this.setBanner(this.prevPage(id), 0);
 
     this.timeinterval = this.$interval(this.showSlides.bind(this), 10000);
   }
@@ -65,7 +70,7 @@ class HomeController {
   goNext(id) {
     this.$interval.cancel(this.timeinterval);
     this.currentPage = this.nextPage(id);
-    this.setBanner(this.nextPage(id));
+    this.setBanner(this.nextPage(id), 1);
 
     this.timeinterval = this.$interval(this.showSlides.bind(this), 10000);
   }
@@ -81,7 +86,7 @@ class HomeController {
 
 HomeController.$inject = ['HomeService', 'AppService', '$interval', '$state', '$timeout'];
 
-export default angular.module('app.home', [uirouter, HomeService, AppService])
+export default angular.module('app.home', [uirouter, ngTouch, HomeService, AppService])
   .config(routing)
   .controller('HomeController', HomeController)
   .name;

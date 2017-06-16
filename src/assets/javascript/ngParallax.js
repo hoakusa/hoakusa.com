@@ -39,7 +39,8 @@ export default angular.module('directives.ngParallax',[]).directive('ngParallax'
               var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
               var speed = (scrollTop / scope.speed);
               if(isMobile){
-                speed = speed * .10
+                // speed = speed * .10;
+                speed = speed;
               }
               if(speed == 0){
                 bgObj.style.backgroundPosition = 'center '+ (0 - scope.top) + '%';

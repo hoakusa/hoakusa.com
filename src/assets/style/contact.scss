@@ -17,20 +17,20 @@
 
   .banner-img {
     position: relative;
-    height: 320px;
+    height: 410px;
     background-color: $background;
-    background-size: 100% auto;
+    background-size: auto 410px;
     background-position: center center;
     background-repeat: no-repeat;
   }
 
   .start-project {
     margin: 0 auto;
-    margin-top: -80px;
+    margin-top: -130px;
     display: block;
     width: 100%;
     color: $dark-color;
-    font-size: 2.4rem;
+    font-size: 1.5rem;
 
     &.btn-main {
       &:before {
@@ -106,6 +106,6 @@
 
 footer {
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   padding: 20px 0;
 }

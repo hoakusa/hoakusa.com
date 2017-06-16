@@ -31,11 +31,16 @@
 
     .banner-title {
       a {
-        width: 56px;
+        width: 100px;
         &.logo-text {
           font-size: 0.83em;
         }
       }
+    }
+
+    .logo-bio {
+      @include textZoomIn(1s);
+      letter-spacing: 2px;
     }
 
     .changepage {

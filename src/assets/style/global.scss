@@ -5,7 +5,7 @@
  **************************************/
 
 html { 
-  font-size: 62.5%;
+  font-size: 100%;
   background: #fefefe;
 }
 
@@ -41,7 +41,7 @@ body {
   background: $background;
   color: $color;
   font-family: $font;
-  font-size: 1.6rem;
+  font-size: 1rem;
   letter-spacing: $letter-spacing;
 }
 
@@ -252,19 +252,6 @@ html, button, input, select, textarea,
           animation: fadeOutRight 0.7s ease-in;
 }
 
-// @keyframes fadeInOut {
-//   0%  {opacity: 1;}
-//   50% {opacity: 0;}
-//   100%{opacity: 1;}
-// }
-
-// .fadeInOut {
-//   -webkit-animation: fadeInOut 1s ease;
-//      -moz-animation: fadeInOut 1s ease;
-//       -ms-animation: fadeInOut 1s ease;
-//           animation: fadeInOut 1s ease;
-// }
-
 @keyframes slideLeft {
   0%  {transform: translate3d(-100px,0,0);}
   100%{transform: translate3d(0,0,0);}
@@ -405,6 +392,26 @@ html, button, input, select, textarea,
           animation: loadingBar $t ease-out;
 }
 
+@keyframes textZoomIn {
+  0% {
+    letter-spacing: 10px;
+  }
+  100% {
+    letter-spacing: 2px;
+  }
+}
+
+@mixin textZoomIn($t) {
+  -webkit-animation: textZoomIn $t ease-out;
+     -moz-animation: textZoomIn $t ease-out;
+      -ms-animation: textZoomIn $t ease-out;
+          animation: textZoomIn $t ease-out;
+}
+
+.textZoomIn {
+  @include textZoomIn(1s);
+}
+
 /**************************************
  * GLOBAL
  **************************************/
@@ -497,6 +504,7 @@ section {
     letter-spacing: 2px;
     margin: 0;
     color: $color;
+    @include textZoomIn(1s);
 
     span {
       display: inline-block;
