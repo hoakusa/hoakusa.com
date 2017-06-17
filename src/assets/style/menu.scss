@@ -251,14 +251,21 @@ $icon: 40px;
   @include closeX(1s);
 }
 
+@media screen and (max-width: 1279px) {
+  #logo {
+    width: 52px;
+  }
+}
+
 @media screen and (max-width: 1023px) {
   
   .menu-img {
+    background-size: 150% auto;
     background-position: 0px center;
   }
 
   .menu-item {
-    height: calc((100vh - #{$icon} - 100px - 46px - 23px - 16px - 56px - 140px)/2);
+    height: calc((100vh - #{$icon} - 100px - 46px - 23px - 16px - 56px - 100px)/2);
 
     .border {
       position: absolute;
@@ -271,7 +278,7 @@ $icon: 40px;
     }
 
     a h3 {
-      margin-top: 80px;
+      margin-top: 20px;
     }
 
     a:hover {
@@ -282,32 +289,19 @@ $icon: 40px;
   }
 
   .menu-footer {
-    height: 140px;
+    height: 100px;
+    .container {
+      padding-top: 16px;
+    }
 
     .copyright {
       display: block;
     }
     .social-link {
-      margin-top: 16px;
+      margin-top: 8px;
       display: block;
       float: left;
     }
-  }
-}
-
-@media screen and (max-width: 1279px) {
-  #logo {
-    width: 52px;
-  }
-
-  .menu-img {
-    background-size: auto 100%;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .menu-img {
-    background-size: 150% auto;
   }
 }
 
@@ -351,23 +345,6 @@ $icon: 40px;
       }
     }
   }
-
-  .menu-footer {
-    height: 100px;
-
-    .container {
-      padding-top: 24px;
-    }
-
-    .copyright {
-      display: block;
-    }
-    .social-link {
-      margin-top: 8px;
-      display: block;
-      float: left;
-    }
-  }
 }
 
 @media screen and (max-width: 360px) {
@@ -376,10 +353,6 @@ $icon: 40px;
       margin-top: 40px;
       font-size: 1.25rem;
     }
-  }
-
-  .menu-tabs {
-    margin-top: 24px;
   }
 
   .menu-item {
@@ -394,18 +367,5 @@ $icon: 40px;
   .menu-footer {
     height: 72px;
     font-size: 0.6875rem;
-
-    .container {
-      padding-top: 16px;
-    }
-
-    .copyright {
-      display: block;
-    }
-    .social-link {
-      margin-top: 8px;
-      display: block;
-      float: left;
-    }
   }
 }
