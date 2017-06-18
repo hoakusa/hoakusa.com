@@ -63,6 +63,7 @@ $icon: 40px;
 
 // Animation
 .menu-hamburger {
+
   &:hover, &:active {
     div {
       @include moveright(0.55s);
@@ -169,6 +170,10 @@ $icon: 40px;
 
     h3 {
       margin-top: 30%;
+    }
+
+    h2 {
+      font-style: italic;
     }
 
     &:hover {

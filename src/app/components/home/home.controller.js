@@ -78,7 +78,7 @@ class HomeController {
     this.$timeout(() => {
       this.$state.go('project', {name: url}, {reload: true});
       this.isWaiting = false;
-    }, 2900); 
+    }, 1900); 
   }
 }
 

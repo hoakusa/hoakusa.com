@@ -34,7 +34,7 @@ class ProjectController {
     this.$timeout(() => {
       this.$state.go('project', {name: this.ProjectService.findPrev(this.data.id)}, {reload: true});
       this.isWaiting = false;
-    }, 2900);
+    }, 1900);
   }
 
   goNext() {
@@ -42,7 +42,7 @@ class ProjectController {
     this.$timeout(() => {
       this.$state.go('project', {name: this.ProjectService.findNext(this.data.id)}, {reload: true});
       this.isWaiting = false;
-    }, 2900);
+    }, 1900);
 }
 
   elementIn($el) {
@@ -57,7 +57,7 @@ class ProjectController {
     this.$timeout(() => {
       this.$state.go('work', {}, {reload: true});
       this.isWaiting = false;
-    }, 2900);
+    }, 1900);
   }
 
   goProject(url) {
@@ -65,7 +65,7 @@ class ProjectController {
     this.$timeout(() => {
       this.$state.go('project', {name: url}, {reload: true});
       this.isWaiting = false;
-    }, 2900);
+    }, 1900);
   }
   
 }

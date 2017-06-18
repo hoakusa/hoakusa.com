@@ -23,7 +23,7 @@ class MenuController {
     this.$timeout(() => {
       this.$state.go(state, {}, {reload: true});
       this.isWaiting = false;
-    }, 2900);
+    }, 1900);
   }
 
   open() {

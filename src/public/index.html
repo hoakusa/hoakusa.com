@@ -1,6 +1,7 @@
 <!doctype html>
 <html ng-app="app" lang="en" ng-controller="AppController as app">
 <head>
+  <base href="/">
   <meta charset="UTF-8">
   <title ng-bind="app.App.getTitle()">An Pham - UX Designer &amp; Web Developer</title>
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
@@ -16,16 +17,20 @@
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-min.css">
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
 <!--<![endif]-->
-  
-  <base href="/">
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-  <script src="/lib/mousewheel.js"></script>
-  <script src="/lib/modernizr.min.js"></script>
 
 </head>
 <body class="fadeInSlow">
+  <div id="svg-opening">
+    <svg width="300" height="150"></svg>
+    <div class="svg-des">Create neutral experiences<br />for everyday things</div>
+  </div>
   <main-menu></main-menu>
   <ui-view></ui-view>
+
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
+  <script type="text/javascript" src="/lib/mousewheel.js"></script>
+  <script type="text/javascript" src="/lib/text.js"></script>
+
 </body>
 </html>

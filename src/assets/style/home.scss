@@ -58,7 +58,7 @@
 
 @keyframes imgAnimation {
   0% {
-    left: -20%;
+    left: -25%;
   }
 
   100% {
@@ -118,9 +118,84 @@
   animation-direction: alternate;
 }
 
+@keyframes tag2 {
+  0% {opacity: 0;}
+
+  50% {
+    opacity: 0;
+    margin-top: 200px;
+    font-size: 2rem;
+  }
+
+  60% {
+    opacity: 1;
+    margin-top: 0px;
+    font-size: 1rem;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@mixin tag2() {
+  -webkit-animation: tag2 5s ease-out;
+     -moz-animation: tag2 5s ease-out;
+      -ms-animation: tag2 5s ease-out;
+          animation: tag2 5s ease-out;
+}
+
+@keyframes svg {
+  0% {
+    visibility: visible;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@mixin svg() {
+  -webkit-animation: svg 5s ease-out;
+     -moz-animation: svg 5s ease-out;
+      -ms-animation: svg 5s ease-out;
+          animation: svg 5s ease-out;
+}
+
 /*
  * STYLE
  */
+
+#svg-opening {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000; // == waiting layer bar
+  color: $dark-bg;
+  background-color: $background;
+  text-align: center;
+  visibility: hidden;
+  svg {
+    margin: 30vh auto 0 auto;
+  } 
+  @include svg();
+
+  .svg-des {
+    margin: 0 auto;
+    margin-top: 0;
+    @include tag2();
+    font-size: 1rem;
+  }
+}
 
 .home {
   position: relative;
@@ -181,7 +256,9 @@
       clip-path: polygon(0% 0, 100% 0, 100% 100%, 20% 100%);
       img {
         height: 120%;
-        @include bgzoom(20s);
+        @include bgzoom(40s);
+        -webkit-animation-delay: $opening-delay;
+        animation-delay: $opening-delay;
       }
     }
   }
@@ -194,6 +271,12 @@
   //   // background-color: $color;
   // }
 
+  .banner-title .logo-text,
+  .banner-title .logo-text span {
+    -webkit-animation-delay: $opening-delay;
+    animation-delay: $opening-delay;
+  }
+
   .banner-tags {
     margin-top: 80px;
     div {
@@ -204,7 +287,26 @@
     .tag1 {
       font-size: 1.5rem;
       letter-spacing: 2px;
-      @include textZoomIn(1s);
+      @include textZoomIn(1.5s);
+      -webkit-animation-delay: $opening-delay;
+      animation-delay: $opening-delay;
+    }
+  }
+
+  .btn-main {
+    background-color: transparent;
+    &:before {
+      content:'';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: $dark-bg;
+      @include openX(1.5s);
+      -webkit-animation-delay: $opening-delay;
+      animation-delay: $opening-delay;
     }
   }
 
