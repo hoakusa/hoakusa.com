@@ -487,7 +487,7 @@ section {
     letter-spacing: 2px;
     margin: 0;
     color: $color;
-    @include textZoomIn(1.5s);
+    @include textZoomIn(1.2s);
 
     span {
       display: inline-block;

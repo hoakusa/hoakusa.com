@@ -287,7 +287,7 @@
     .tag1 {
       font-size: 1.5rem;
       letter-spacing: 2px;
-      @include textZoomIn(1.5s);
+      @include textZoomIn(1s);
       -webkit-animation-delay: $opening-delay;
       animation-delay: $opening-delay;
     }
@@ -304,7 +304,7 @@
       height: 100%;
       z-index: -1;
       background-color: $dark-bg;
-      @include openX(1.5s);
+      @include openX(1.2s);
       -webkit-animation-delay: $opening-delay;
       animation-delay: $opening-delay;
     }

@@ -18,14 +18,6 @@ import Contact from './components/contact/contact.controller';
 
 import AppService from './app.service';
 
-// let app = () => {
-//   return {
-//     template: require('./app.html'),
-//     controller: 'AppController',
-//     controllerAs: 'app'
-//   }
-// };
-
 class AppController {
   constructor(AppService, $timeout) {
     this.App = AppService;
@@ -38,6 +30,5 @@ class AppController {
 AppController.$inject = ['AppService', '$timeout'];
 
 export default angular.module('app', [uirouter, Menu, menu, Home, Work, Project, Contact, AppService, ScrollAnimate, ngParallax])
-  // .directive('app', app)
   .controller('AppController', AppController)
   .config(routing);
