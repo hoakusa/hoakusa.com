@@ -61,6 +61,7 @@ class ProjectController {
   }
 
   goProject(url) {
+    console.log(url);
     this.isWaiting = true;
     this.$timeout(() => {
       this.$state.go('project', {name: url}, {reload: true});

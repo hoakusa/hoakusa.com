@@ -249,14 +249,14 @@
 
     .banner-img {
       position: relative;
-      margin-left: 30%;
+      float: right;
+      width: 50%;
       height: 100%;
       overflow: hidden;
-      -webkit-clip-path: polygon(0% 0, 100% 0, 100% 100%, 15% 100%);
-      clip-path: polygon(0% 0, 100% 0, 100% 100%, 15% 100%);
       img {
+        margin: 0 auto;
         height: 120%;
-        @include bgzoom(40s);
+        @include bgzoom(90s);
         -webkit-animation-delay: $opening-delay;
         animation-delay: $opening-delay;
       }
@@ -368,7 +368,7 @@
   bottom: 38px;
   // left: -60%;
   height: 100%;
-  @include imgAnimation(imgAnimation,120s);
+  @include imgAnimation(imgAnimation,180s);
 }
 
 #park-wheel {
@@ -379,15 +379,19 @@
   height: auto;
 }
 
+@media screen and (max-width: 1280px) {
+  .home .banner-project .banner-img {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 1023px) {
   .background-image {
     display: none;
   }
 
   .home .banner-project .banner-img {
-    margin: 0;
-    -webkit-clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
-    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+    width: 100%;
     img {
       height: 100%;
       margin-left: 0%;

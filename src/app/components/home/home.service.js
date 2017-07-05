@@ -12,11 +12,11 @@ class HomeService {
         projectId: 0
       },{
         title: 'Web Service',
-        description: 'Interactive, Full stack Developer, AngularJS, React, Wordpress CMS',
+        description: 'Web Design, UX/UI, Full stack Developer, AngularJS, React, Wordpress CMS',
         projectId: 1
       },{
         title: 'iOS/Android Application',
-        description: 'Mobile Interaction, Prototype, Invision, Frame.js, IoT app',
+        description: 'Mobile Design, Interaction & Motion, Prototype, Invision, IoT app',
         projectId: 2
       },{
         title: 'Brand & Service',

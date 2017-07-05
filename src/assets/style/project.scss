@@ -19,6 +19,8 @@
     background-size: auto 140%;
     background-position: center center;
     background-repeat: no-repeat;
+    background-color: #212121;
+    overflow: hidden;
 
     .overlay {
       position: absolute;
@@ -56,6 +58,21 @@
     .arrow.arrow-right:before,
     .arrow.arrow-right:after {
       // background-color: $dark-highlight;
+    }
+  }
+
+  .banner-video {
+    video {
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    .banner-title {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 
@@ -118,20 +135,45 @@
     font-style: italic;
     letter-spacing: 2px;
   }
-  
-  img {
-    width: 100%;
-    @include transition(0.55s, ease-out);
-  }
 
   p {
     padding-left: $padding;
     margin: 8px 0;
   }
 
+  .project-img {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: auto 125%;
+    background-position: center, center;
+  }
+
   .project-name {
     text-transform: uppercase;
     letter-spacing: 2px;
+  }
+
+  a.work-item {
+    .project-img {
+      opacity: 1;
+      @include transition(0.55s, ease-out);
+    }    
+  }
+
+  a.work-item:hover {
+    .project-img {
+      opacity: 0.8;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .project .banner-video video {
+    height: 100%;
+    width: auto;
+    left: calc(50vw - 87vh);
   }
 }
 
@@ -141,6 +183,7 @@
   }
 
   .project {
+
     .banner-project .banner-title a {
       width: 150px;
       &.logo-text {
@@ -164,9 +207,14 @@
       }
     }
   }
+
   .related-work {
     p {
       padding: 0 16px;
+    }
+
+    .project-img {
+      height: 220px;
     }
   }
 }
@@ -189,6 +237,9 @@
 
   .related-work {
     margin-top: 100px;
+    .project-img {
+      height: 220px;
+    }
   }
 
 }
