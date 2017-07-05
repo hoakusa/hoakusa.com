@@ -6,8 +6,11 @@ import ProjectService from '../../shared/project.service';
 import AppService from '../../app.service';
 
 class WorkController {
-  constructor(ProjectService, AppService, $state, $timeout) {
+  constructor(ProjectService, AppService, $state, $timeout, $anchorScroll) {
     AppService.setTitle('Works |');
+
+    $anchorScroll();
+    
     this.isWaiting = false;
     this.isActive = [true];
     this.title = "Works";
@@ -74,7 +77,7 @@ class WorkController {
   }
 }
 
-WorkController.$inject = ['ProjectService', 'AppService', '$state', '$timeout'];
+WorkController.$inject = ['ProjectService', 'AppService', '$state', '$timeout', '$anchorScroll'];
 
 export default angular.module('app.work', [uirouter, ProjectService, AppService])
   .config(routing)

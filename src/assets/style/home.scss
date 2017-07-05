@@ -254,7 +254,7 @@
       height: 100%;
       overflow: hidden;
       img {
-        margin: 0 auto;
+        margin-left: calc(25vw - 87vh);
         height: 120%;
         @include bgzoom(90s);
         -webkit-animation-delay: $opening-delay;

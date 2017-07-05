@@ -84,6 +84,30 @@ class ProjectService {
           ]
         }
       },{
+        name: 'Instagroom',
+        category: 0,
+        tags: ['Mobile app', 'Javascript', 'Service', 'Ionic', 'AngularJS'],
+        time: {
+          month: 'Oct',
+          year: '2015'
+        },
+        partner: {
+          name: '',
+          url: ''
+        },
+        image: '/img/instagroom-cover.png',
+        banner_video: '/img/instagroom.mp4',
+        urls: {
+          bahance: '',
+          website: 'https://github.com/hoakusa/Instagram_client'
+        },
+        content: {
+        text: 'Like Instagram, Instagroom app allows users are able to post shots and sharing life with friends. Through following function and sharing pictures, people are welcome to join image-social world as Instagram app. This project is open source, build with Ionic and Angular 1.x, server runs by Heroku, Expressjs and MongoDB.',
+          images: [
+            '/img/instagroom-cover.png'
+          ]
+        }
+      },{
         name: 'Alex in Wonderland',
         category: 3,
         tags: ['Game', 'Game Design', 'Unity2D', 'Global Game Jam'],
@@ -110,7 +134,7 @@ class ProjectService {
       },{
         name: 'Simon Game',
         category: 0,
-        tags: ['Game', 'Javascript', 'Free Code Camp', 'web app'],
+        tags: ['Game', 'Javascript', 'Free Code Camp', 'Web app'],
         time: {
           month: 'June',
           year: '2017'
@@ -136,7 +160,7 @@ class ProjectService {
       },{
         name: 'Tic tac toe',
         category: 0,
-        tags: ['Game', 'Javascript', 'Free Code Camp', 'web app'],
+        tags: ['Game', 'Javascript', 'Free Code Camp', 'Web app'],
         time: {
           month: 'June',
           year: '2017'
@@ -163,7 +187,7 @@ class ProjectService {
       },{
         name: 'Calculator',
         category: 0,
-        tags: ['Game', 'Javascript', 'Free Code Camp', 'web app'],
+        tags: ['Game', 'Javascript', 'Free Code Camp', 'Web app'],
         time: {
           month: 'June',
           year: '2017'
@@ -187,7 +211,7 @@ class ProjectService {
       },{
         name: 'Pomodoro Clock',
         category: 0,
-        tags: ['Game', 'Javascript', 'Free Code Camp', 'web app'],
+        tags: ['Game', 'Javascript', 'Free Code Camp', 'Web app'],
         time: {
           month: 'June',
           year: '2017'
@@ -208,7 +232,7 @@ class ProjectService {
             '/img/pomodoro.png'
           ]
         }
-      },      
+      }   
     ];
   }
 
