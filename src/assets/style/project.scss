@@ -30,7 +30,7 @@
   .banner-project {
     position: relative;
     height: 100vh;
-    background-size: auto 140%;
+    background-size: auto 130%;
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #212121;
@@ -54,6 +54,10 @@
       }
     }
 
+    .logo-text span {
+      border-top-color: $gray;
+    }
+
     .logo-text, .logo-bio {
       color: $gray;
     }
@@ -75,7 +79,7 @@
     .arrow.arrow-left:after,
     .arrow.arrow-right:before,
     .arrow.arrow-right:after {
-      background-color: $gray;
+      background-color: $a;
     }
   }
 
