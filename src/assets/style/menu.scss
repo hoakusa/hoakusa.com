@@ -63,7 +63,6 @@ $icon: 40px;
 
 // Animation
 .menu-hamburger {
-
   &:hover, &:active {
     div {
       @include moveright(0.55s);

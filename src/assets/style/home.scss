@@ -48,21 +48,21 @@
 
 @keyframes bgAnimation {
   0% {
-    left: -35%;
+    left: -100%;
   }
 
   100% {
-    left: 100%;
+    left: 0%;
   }
 }
 
 @keyframes imgAnimation {
   0% {
-    left: -25%;
+    left: -20%;
   }
 
   100% {
-    left: 100%;
+    left: 50%;
   }
 }
 
@@ -254,8 +254,8 @@
       height: 100%;
       overflow: hidden;
       img {
-        margin-left: calc(25vw - 87vh);
-        height: 120%;
+        margin-left: calc(25vw - 80vh);
+        height: 100%;
         @include bgzoom(90s);
         -webkit-animation-delay: $opening-delay;
         animation-delay: $opening-delay;
@@ -360,7 +360,7 @@
   bottom: 38px;
   // left: -50%;
   height: 100%;
-  @include imgAnimation(bgAnimation,300s);
+  @include imgAnimation(bgAnimation,240s);
 }
 
 #park {
@@ -368,7 +368,7 @@
   bottom: 38px;
   // left: -60%;
   height: 100%;
-  @include imgAnimation(imgAnimation,180s);
+  @include imgAnimation(imgAnimation,120s);
 }
 
 #park-wheel {
@@ -380,8 +380,16 @@
 }
 
 @media screen and (max-width: 1280px) {
+  #park-img {
+    display: none;
+  }
   .home .banner-project .banner-img {
     width: 100%;
+  }
+  .home {
+    .logo-text, .logo-bio, .banner-tags {
+      background-color: rgba(255,255,255,0.7);
+    }
   }
 }
 
@@ -394,8 +402,12 @@
     width: 100%;
     img {
       height: 100%;
-      margin-left: 0%;
+      // margin-left: 0%;
     }
+  }
+
+  .home .changepage {
+    display: none;
   }
 
   .changepage .btn-arrow:nth-child(2).left {

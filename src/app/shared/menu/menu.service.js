@@ -7,22 +7,22 @@ class MenuService {
         name: 'About',
         url: '/',
         state: 'home',
-        image: 'https://image.ibb.co/nxeAqv/g1.jpg'
+        image: '/img/menu1.jpg'
       },{
         name: 'Works',
         url: '/work',
         state: 'work',
-        image: 'https://image.ibb.co/dBBOAv/g2.jpg'
+        image: '/img/menu2.jpg'
       },{
         name: 'Blog',
         url: '/',
         state: 'home',
-        image: 'https://image.ibb.co/fHygxa/g3.jpg'
+        image: '/img/menu3.jpg'
       },{
         name: 'Contact',
         url: '/contact',
         state: 'contact',
-        image: 'https://image.ibb.co/nxeAqv/g1.jpg'
+        image: '/img/menu4.jpg'
       }
     ];
   }

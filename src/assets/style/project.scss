@@ -55,11 +55,11 @@
     }
 
     .logo-text span {
-      border-top-color: $gray;
+      border-top-color: #aaa;
     }
 
     .logo-text, .logo-bio {
-      color: $gray;
+      color: #aaa;
     }
 
     .logo-bio {
@@ -269,6 +269,9 @@
         margin: 0;
         padding: 56px $padding;
       }
+    }
+    .banner-project .changepage {
+      display: none;
     }
   }
 

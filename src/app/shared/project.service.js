@@ -17,7 +17,8 @@ class ProjectService {
           name: 'Plantui Oy',
           url: 'http://plantui.com/'
         },
-        image: '/img/plantui-cover.png',
+        image: '/img/plantui-cover.jpg',
+        banner_image: '/img/plantui-banner.jpg',
         banner_video: '',
         urls: {
           behance: 'https://www.behance.net/gallery/54364375/Plantui-App',
@@ -26,7 +27,7 @@ class ProjectService {
         content: {
           text: 'Apply Internet of Things technique in Plantui Smart device to follow and control plant growth from remote. With Plantui Garden, everyone has fresh vegetable without soil, without take care of all time. Plantui Project is established with Plantui Oy partner and Oulu University of Applied Sciences, Oulu, Finland. The final product includes a website manager and a mobile app service which connect with Plantui device to send plant growth information to user.',
           images: [
-            '/img/plantui1.png',
+            '/img/plantui1.jpg',
           ]
         }        
       },{
@@ -41,7 +42,8 @@ class ProjectService {
           name: 'Invie Group',
           url: ''
         },
-        image: '/img/invie-cover.png',
+        image: '/img/invie-cover.jpg',
+        banner_image: '/img/banner4.jpg',
         banner_video: '',
         urls: {
           behance: 'https://www.behance.net/gallery/54423973/Invie-App',
@@ -50,31 +52,7 @@ class ProjectService {
         content: {
           text: 'Start with saving energy ideal in Avanto kickstarter program, Inive House bring a smart solution for future house to follow and control electric furniture via Invie application. Apply Internet of Things technique in Invie Plug, we bring a wireless house control system for everyone. With Invie House, people are free to control electric device from remote, also observe and manage electric consumption usage. With Invie App, everything is under your control.',
           images: [
-            '/img/invie1.png',
-          ]
-        }        
-      },{
-        name: 'Alphabet Creative Studio',
-        category: 0,
-        tags: ['Web', 'Design', 'Wordpress', 'AngularJS', 'Javascript', 'Animation', 'UX/UI', 'Responsive', 'Photoshop', 'Illustrator'],
-        time: {
-          month: 'June',
-          year: '2017'
-        },
-        partner: {
-          name: '',
-          url: ''
-        },
-        image: '/img/alphabet-cover.png',
-        banner_video: '',
-        urls: {
-          behance: 'https://www.behance.net/gallery/54391931/Alphabet-Studio',
-          website: 'https://codepen.io/hoakusa/full/ZKRzZX/'
-        },
-        content: {
-          text: 'Alphabet Creative Studio provides website template at the intersection of technology, design, culture, and brand stories. The website exhibits design products made by Alphabet Studio. With bright color set, we believe this website is appropriate landing page for various companes and indie studios. After finish design phase with Photoshop and Illustrator, a demo website was made by AngularJS and available to visit around. Hope people like it.',
-          images: [
-            '/img/alphabet1.png',
+            '/img/invie1.jpg',
           ]
         }        
       },{
@@ -89,7 +67,8 @@ class ProjectService {
           name: 'Kiem Oy',
           url: 'http://kiem.fi'
         },
-        image: '/img/kiem2017-cover.png',
+        image: '/img/kiem2017-cover.jpg',
+        banner_image: '/img/kiem2017-cover.jpg',
         banner_video: '',
         urls: {
           behance: 'https://www.behance.net/gallery/54369059/Kiemfi-2017',
@@ -98,7 +77,7 @@ class ProjectService {
         content: {
           text: 'Kiem Ravintola is a Chinese Restaurant in Oulu areas, Finland. In remake version, new website interface focuses on highlight Menu list and buffet lounas service. About backend, we continue using Wordpress as manager tool for customize style purpose and update posts. In front-end, because Wordpress has opened REST API from version 4.7 new client can connect with database through request via React-axios, hence, exchange data will pass through request then handle with React components.',
           images: [
-            '/img/kiem20171.png',
+            '/img/kiem20171.jpg',
           ]
         }        
       },{
@@ -113,7 +92,8 @@ class ProjectService {
           name: 'Minhshop',
           url: ''
         },
-        image: '/img/minhshop-cover.png',
+        image: '/img/minhshop-cover.jpg',
+        banner_image: '/img/minhshop-cover.jpg',
         banner_video: '',
         urls: {
           behance: 'https://www.behance.net/gallery/54370019/Minh-shop',
@@ -122,7 +102,7 @@ class ProjectService {
         content: {
           text: 'The purpose of the project is to design an e-commercial comestic website for Minhshop in Hanoi. Their online shopping activity could increase their profit and attract more attention via social media network. The shop website transmits necessary information about cosmetic products in different categories. Grouping products provides a powerful solution for quickly view and selection that help administrator could effortlessly update product details. More than promoting local store activities, website product can preserve a successful long term relationship between shop and customer.',
           images: [
-            '/img/minhshop1.png',
+            '/img/minhshop1.jpg',
           ]
         }        
       },{
@@ -137,7 +117,8 @@ class ProjectService {
           name: 'Kiem Oy',
           url: 'http://kiem.fi'
         },
-        image: '/img/kiem2015-cover.png',
+        image: '/img/kiem2015-cover.jpg',
+        banner_image: '/img/kiem2015-cover.jpg',
         banner_video: '/img/kiem2015.mp4',
         urls: {
           behance: 'https://www.behance.net/gallery/54369059/Kiemfi-2015',
@@ -146,8 +127,33 @@ class ProjectService {
         content: {
           text: 'Kiem Ravintola is a Chinese Restaurant in Oulu areas, Finland. In Kiem site, customers feel relax to search information details, list of foods and music event in Kiem Pub every weekend. Build by Wordpress CMS, the admin page provides a smooth manager tool for modifying and update posts.',
           images: [
-            '/img/kiem2015-cover.png',
-            '/img/kiem20152.png',
+            '/img/kiem2015-cover.jpg',
+            '/img/kiem20152.jpg',
+          ]
+        }        
+      },{
+        name: 'Alphabet Creative Studio',
+        category: 0,
+        tags: ['Web', 'Design', 'Wordpress', 'AngularJS', 'Javascript', 'Animation', 'UX/UI', 'Responsive', 'Photoshop', 'Illustrator'],
+        time: {
+          month: 'June',
+          year: '2017'
+        },
+        partner: {
+          name: '',
+          url: ''
+        },
+        image: '/img/alphabet-cover.jpg',
+        banner_image: '/img/alphabet-cover.jpg',
+        banner_video: '',
+        urls: {
+          behance: 'https://www.behance.net/gallery/54391931/Alphabet-Studio',
+          website: 'https://codepen.io/hoakusa/full/ZKRzZX/'
+        },
+        content: {
+          text: 'Alphabet Creative Studio provides website template at the intersection of technology, design, culture, and brand stories. The website exhibits design products made by Alphabet Studio. With bright color set, we believe this website is appropriate landing page for various companes and indie studios. After finish design phase with Photoshop and Illustrator, a demo website was made by AngularJS and available to visit around. Hope people like it.',
+          images: [
+            '/img/alphabet1.jpg',
           ]
         }        
       },{
@@ -162,7 +168,8 @@ class ProjectService {
           name: 'Suprview Oy',
           url: 'http://suprview.fi'
         },
-        image: '/img/indoor-cover.png',
+        image: '/img/indoor-cover.jpg',
+        banner_image: '/img/indoor-cover.jpg',
         banner_video: '/img/indoor-cover.mp4',
         urls: {
           behance: 'https://www.behance.net/gallery/54341707/OutdoorAR-ver20',
@@ -171,11 +178,11 @@ class ProjectService {
         content: {
           text: 'OUTDOOR AR offers you a gorgeous way to view your house in its glory. In the second version, OUTDOOR AR provides an intuitive technique to discovery both outside and inside your house. With walk through view, customers feel relax to customize home style by own ideal.',
           images: [
-            '/img/indoor1.png',
+            '/img/indoor1.jpg',
             '/img/indoor2.gif',
-            '/img/indoor-cover.png',
+            '/img/indoor-cover.jpg',
             '/img/indoor4.gif',
-            '/img/indoor5.png'
+            '/img/indoor5.jpg'
           ]
         }
       },{
@@ -190,7 +197,8 @@ class ProjectService {
           name: 'Suprview Oy',
           url: 'http://suprview.fi'
         },
-        image: '/img/outdoorAR-cover.png',
+        image: '/img/outdoorAR-cover.jpg',
+        banner_image: '/img/outdoorAR-cover.jpg',
         banner_video: '/img/outdoorAR.mp4',
         urls: {
           behance: 'https://www.behance.net/gallery/54213967/OutdoorAR',
@@ -199,13 +207,13 @@ class ProjectService {
         content: {
           text: 'OUTDOOR AR offers you a gorgeous way to view your house in its glory. Under the effect of our amazing software with the use of cutting-edge Augmented Reality technology, 3D model of building will be smoothly visualized in the real environment. There are some unique features such as changing the size or even colors of the building. Our product is known as AR catalog that helps prefabricated house manufacturers to get notification from potential buyers anywhere in the world without a sales person initial contacts. #outdoorAR		#mobileservice		#ARapp	#interactivedesign',
           images: [
-            '/img/outdoorAR-cover.png',
-            '/img/outdoorAR2.png',
-            '/img/outdoorAR3.png',
+            '/img/outdoorAR-cover.jpg',
+            '/img/outdoorAR2.jpg',
+            '/img/outdoorAR3.jpg',
             '/img/outdoorAR4.gif',
-            '/img/outdoorAR5.png',
+            '/img/outdoorAR5.jpg',
             '/img/outdoorAR9.gif',
-            '/img/outdoorAR10.png',
+            '/img/outdoorAR10.jpg',
           ]
         }
       },{
@@ -220,7 +228,8 @@ class ProjectService {
           name: '',
           url: ''
         },
-        image: '/img/instagroom-cover.png',
+        image: '/img/instagroom-cover.jpg',
+        banner_image: '/img/instagroom-cover.jpg',
         banner_video: '/img/instagroom.mp4',
         urls: {
           behance: '',
@@ -229,7 +238,7 @@ class ProjectService {
         content: {
         text: 'Like Instagram, Instagroom app allows users are able to post shots and sharing life with friends. Through following function and sharing pictures, people are welcome to join image-social world as Instagram app. This project is open source, build with Ionic and Angular 1.x, server runs by Heroku, Expressjs and MongoDB.',
           images: [
-            '/img/instagroom-cover.png'
+            '/img/instagroom-cover.jpg'
           ]
         }
       },{
@@ -244,7 +253,8 @@ class ProjectService {
           name: 'Global Game Jam',
           url: 'http://globalgamejam.org/'
         },
-        image: '/img/alex-cover.png',
+        image: '/img/alex-cover.jpg',
+        banner_image: '/img/alex-cover.jpg',
         banner_video: '/img/alex-cover.mp4',
         urls: {
           behance: 'https://www.behance.net/gallery/54387205/Alex-in-Wonderland',
@@ -253,7 +263,7 @@ class ProjectService {
         content: {
           text: 'Alex in Wonderland is a PC game build for Window platform, which is made by Unity2D. This game is my first time join Global Game Jam - an annual game maker event during 48 hours. In Alex in Wonderland, the goal is to shoot down as many coin boxes with your boomerang as possible before the countdown runs out, while avoiding bombs and poisonous frogs that will randomly jump out. Use W, A, D key to jump, move left and move right. Press mouse left to aim and hold to charge the power.',
           images: [
-            '/img/alex-01.png'
+            '/img/alex-01.jpg'
           ]
         }
       },{
@@ -269,6 +279,7 @@ class ProjectService {
           url: 'https://www.nousevarannikkoseutu.fi/fi/etusivu'
         },
         image: '/img/nuoriso-cover.jpg',
+        banner_image: '/img/nuoriso-cover.jpg',
         banner_video: '',
         urls: {
           behance: '',
@@ -295,7 +306,8 @@ class ProjectService {
           name: '',
           url: ''
         },
-        image: '/img/quote-cover.png',
+        image: '/img/quote-cover.jpg',
+        banner_image: '/img/quote-cover.jpg',
         banner_video: '',
         urls: {
           behance: '',
@@ -304,10 +316,10 @@ class ProjectService {
         content: {
           text: 'With Quote Machine, people will get random quotation by genius in the world. In my application, precious quotation resources came from popular book authors. In additional, visitors are welcome to tweet out and sharing favourite quote through twitter network.',
           images: [
-            '/img/quote1.png',
-            '/img/quote2.png',
-            '/img/quote3.png',
-            '/img/quote4.png'
+            '/img/quote1.jpg',
+            '/img/quote2.jpg',
+            '/img/quote3.jpg',
+            '/img/quote4.jpg'
           ]
         }
       },{
@@ -322,7 +334,8 @@ class ProjectService {
           name: '',
           url: ''
         },
-        image: '/img/simon-cover.png',
+        image: '/img/simon-cover.jpg',
+        banner_image: '/img/simon-cover.jpg',
         banner_video: '/img/simon.mp4',
         urls: {
           behance: '',
@@ -331,9 +344,9 @@ class ProjectService {
         content: {
           text: 'Simon Game is an electronic game of memory skills, requires player listen to music (or sound) then repeat what they hear in order. At each level, game device plays sounds and show the light (red, green, yellow, blue) which correspond to the sound order. Player has to remember the order of sound and light position. After game device done, playes has to perform what they heard in the order as game device played before. If player plays right, he will pass to next level, if wrong answer, game will restart.',
           images: [
-            '/img/simon1.png',
-            '/img/simon2.png',
-            '/img/simon3.png',
+            '/img/simon1.jpg',
+            '/img/simon2.jpg',
+            '/img/simon3.jpg',
           ]
         }
       },{
@@ -348,7 +361,8 @@ class ProjectService {
           name: '',
           url: ''
         },
-        image: '/img/tic-cover.png',
+        image: '/img/tic-cover.jpg',
+        banner_image: '/img/tic-cover.jpg',
         banner_video: '/img/tic.mp4',
         urls: {
           behance: '',
@@ -357,10 +371,10 @@ class ProjectService {
         content: {
           text: 'My game is based on classical Tic-tac-toe paper game. Here, there are 2 playes, X and O, who take turns marking the spaces in a 3x3 grid. First player who place three of their mark (same X or O) in a horizontal, vertical or diagonal row wins this game. In my game, playes will play versus computer. Hope people like it.',
           images: [
-            '/img/tic1.png',
-            '/img/tic2.png',
-            '/img/tic3.png',
-            '/img/tic4.png',
+            '/img/tic1.jpg',
+            '/img/tic2.jpg',
+            '/img/tic3.jpg',
+            '/img/tic4.jpg',
           ]
         }
       },{
@@ -375,7 +389,8 @@ class ProjectService {
           name: '',
           url: ''
         },
-        image: '/img/calculator.png',
+        image: '/img/calculator.jpg',
+        banner_image: '/img/calculator.jpg',
         banner_video: '',
         urls: {
           behance: '',
@@ -384,7 +399,7 @@ class ProjectService {
         content: {
           text: 'The application is an electrical calculator simulator follow Skeuomorphism design. People can do simple operators with my calculator such as sum, subtract, multiply, divide. Hope people will like it.',
           images: [
-            '/img/calculator.png'
+            '/img/calculator.jpg'
           ]
         }
       },{
@@ -399,7 +414,8 @@ class ProjectService {
           name: '',
           url: ''
         },
-        image: '/img/pomodoro.png',
+        image: '/img/pomodoro.jpg',
+        banner_image: '/img/pomodoro.jpg',
         banner_video: '',
         urls: {
           behance: '',
@@ -408,7 +424,7 @@ class ProjectService {
         content: {
           text: 'Pomodoro clock is a technique to control and countdown timer as your wish. My online pomodoro Clock via Codepen server brings an intuitive look to set timer. Hope my project is helpful for everyone.',
           images: [
-            '/img/pomodoro.png'
+            '/img/pomodoro.jpg'
           ]
         }
       }  
