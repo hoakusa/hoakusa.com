@@ -1,9 +1,9 @@
 import angular from 'angular';
 import MenuService from './menu.service';
-import SocialLinkService from '../social-link.service';
+import DataService from '../data.service';
 
 class MenuController {
-  constructor(MenuService, SocialLinkService, $state, $timeout) {
+  constructor(MenuService, DataService, $state, $timeout) {
     this.isWaiting = false;
     this.isOpen   = false;
     this.isClose  = false;
@@ -13,7 +13,7 @@ class MenuController {
     this.title    = "Alice";
     this.bio      = "UX Designer & Web Developer";
     this.tabs     = MenuService.getMenu();
-    this.links    = SocialLinkService.getLinks();
+    this.links    = DataService.getContact().links;
   }
 
   goto(state) {
@@ -52,8 +52,8 @@ class MenuController {
   }
 }
 
-MenuController.$inject = ['MenuService', 'SocialLinkService', '$state', '$timeout'];
+MenuController.$inject = ['MenuService', 'DataService', '$state', '$timeout'];
 
-export default angular.module('app.menu', [MenuService, SocialLinkService])
+export default angular.module('app.menu', [MenuService, DataService])
   .controller('MenuController', MenuController)
   .name;

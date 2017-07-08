@@ -3,18 +3,19 @@ import uirouter from 'angular-ui-router';
 import routing from './contact.routes';
 
 import AppService from '../../app.service';
-import SocialLinkService from '../../shared/social-link.service';
+import DataService from '../../shared/data.service';
 
 class ContactController {
-  constructor(AppService, SocialLinkService) {
+  constructor(AppService, DataService) {
     AppService.setTitle('Contact |');
-    this.links = SocialLinkService.getLinks();
-    
+    let contact = DataService.getContact();
+
+    this.links = contact.links;    
     this.title = 'Contact';
-    this.image = '/img/contactbg.jpg';
-    this.email = 'anpham.hn910@gmail.com';
-    this.cv    = '/';
-    this.certification = 'https://www.freecodecamp.com/hoakusa/front-end-certification';
+    this.image = contact.image;
+    this.email = contact.email;
+    this.cv    = contact.cv;
+    this.certification = contact.certification;
   }
 
   elementIn($el) {
@@ -26,9 +27,9 @@ class ContactController {
   
 }
 
-ContactController.$inject = ['AppService', 'SocialLinkService'];
+ContactController.$inject = ['AppService', 'DataService'];
 
-export default angular.module('app.contact', [uirouter, AppService, SocialLinkService])
+export default angular.module('app.contact', [uirouter, AppService, DataService])
   .config(routing)
   .controller('ContactController', ContactController)
   .name;

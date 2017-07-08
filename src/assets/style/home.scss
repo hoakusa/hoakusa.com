@@ -263,13 +263,13 @@
     }
   }
 
-  // .arrow, 
-  // .arrow.arrow-left:before,
-  // .arrow.arrow-left:after,
-  // .arrow.arrow-right:before,
-  // .arrow.arrow-right:after {
-  //   // background-color: $color;
-  // }
+  .arrow, 
+  .arrow.arrow-left:before,
+  .arrow.arrow-left:after,
+  .arrow.arrow-right:before,
+  .arrow.arrow-right:after {
+    background-color: #fff;
+  }
 
   .banner-title .logo-text,
   .banner-title .logo-text span {
