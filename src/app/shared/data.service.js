@@ -174,7 +174,7 @@ class DataService {
         banner_video: '',
         urls: {
           behance: 'https://www.behance.net/gallery/54391931/Alphabet-Studio',
-          website: 'https://codepen.io/hoakusa/full/ZKRzZX/'
+          website: 'http://alphabetstudio.hoakusa.com'
         },
         content: {
           text: 'Alphabet Creative Studio provides website template at the intersection of technology, design, culture, and brand stories. The website exhibits design products made by Alphabet Studio. With bright color set, we believe this website is appropriate landing page for various companes and indie studios. After finish design phase with Photoshop and Illustrator, a demo website was made by AngularJS and available to visit around. Hope people like it.',
@@ -337,7 +337,7 @@ class DataService {
         banner_video: '',
         urls: {
           behance: '',
-          website: 'https://codepen.io/hoakusa/full/GEKzKN/'
+          website: 'http://quotemachine.hoakusa.com'
         },
         content: {
           text: 'With Quote Machine, people will get random quotation by genius in the world. In my application, precious quotation resources came from popular book authors. In additional, visitors are welcome to tweet out and sharing favourite quote through twitter network.',
@@ -365,7 +365,7 @@ class DataService {
         banner_video: '/img/simon.mp4',
         urls: {
           behance: '',
-          website: 'https://codepen.io/hoakusa/full/wevVKw/'
+          website: 'http://simongame.hoakusa.com'
         },
         content: {
           text: 'Simon Game is an electronic game of memory skills, requires player listen to music (or sound) then repeat what they hear in order. At each level, game device plays sounds and show the light (red, green, yellow, blue) which correspond to the sound order. Player has to remember the order of sound and light position. After game device done, playes has to perform what they heard in the order as game device played before. If player plays right, he will pass to next level, if wrong answer, game will restart.',
@@ -392,7 +392,7 @@ class DataService {
         banner_video: '/img/tic.mp4',
         urls: {
           behance: '',
-          website: 'https://codepen.io/hoakusa/full/KqKRzg/'
+          website: 'http://tictactoe.hoakusa.com'
         },
         content: {
           text: 'My game is based on classical Tic-tac-toe paper game. Here, there are 2 playes, X and O, who take turns marking the spaces in a 3x3 grid. First player who place three of their mark (same X or O) in a horizontal, vertical or diagonal row wins this game. In my game, playes will play versus computer. Hope people like it.',
