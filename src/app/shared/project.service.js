@@ -219,7 +219,7 @@ class ProjectService {
       },{
         name: 'Instagroom',
         category: 0,
-        tags: ['Mobile', 'Javascript', 'Service', 'Ionic', 'AngularJS'],
+        tags: ['Mobile', 'Javascript', 'Service', 'Ionic', 'AngularJS', 'nodejs', 'mongoDB', 'express'],
         time: {
           month: 'Oct',
           year: '2015'
