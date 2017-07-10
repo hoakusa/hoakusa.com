@@ -101,7 +101,7 @@ class DataService {
           website: 'http://kiem.fi'
         },
         content: {
-          text: 'Kiem Ravintola is a Chinese Restaurant in Oulu areas, Finland. In remake version, new website interface focuses on highlight Menu list and buffet lounas service. About backend, we continue using Wordpress as manager tool for customize style purpose and update posts. In front-end, because Wordpress has opened REST API from version 4.7 new client can connect with DataServicebase through request via React-axios, hence, exchange DataService will pass through request then handle with React components.',
+          text: 'Kiem Ravintola is a Chinese Restaurant in Oulu areas, Finland. In remake version, new website interface focuses on highlight Menu list and buffet lounas service. About backend, we continue using Wordpress as manager tool for customize style purpose and update posts. In front-end, because Wordpress has opened REST API from version 4.7 new client can connect with database through request via React-axios, hence, exchange data will pass through request then handle with React components.',
           images: [
             '/img/kiem20171.jpg',
           ]
