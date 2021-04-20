@@ -1,0 +1,27 @@
+image: qekosoft/gitlab-runner-docker:v0.1.1
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_HOST: "ssh://hakovala@${SSH_PRODUCTION_IP}:${SSH_PRODUCTION_PORT}"
+
+before_script:
+  - add-ssh-key $SSH_PRIVATE_KEY
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+  - docker-compose build
+
+deploy:
+  stage: deploy
+  script:
+  - docker-compose down
+  - docker-compose up -d
+  when: manual
