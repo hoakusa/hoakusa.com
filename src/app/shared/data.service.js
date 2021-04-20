@@ -55,7 +55,7 @@ class DataService {
           images: [
             '/img/plantui1.jpg',
           ]
-        }        
+        }
       },{
         name: 'Invie House',
         category: 1,
@@ -80,7 +80,7 @@ class DataService {
           images: [
             '/img/invie1.jpg',
           ]
-        }        
+        }
       },{
         name: 'Kiem.fi 2017',
         category: 0,
@@ -105,7 +105,7 @@ class DataService {
           images: [
             '/img/kiem20171.jpg',
           ]
-        }        
+        }
       },{
         name: 'Minhshop E-commercial',
         category: 0,
@@ -130,7 +130,7 @@ class DataService {
           images: [
             '/img/minhshop1.jpg',
           ]
-        }        
+        }
       },{
         name: 'Kiem.fi 2015',
         category: 0,
@@ -156,7 +156,7 @@ class DataService {
             '/img/kiem2015-cover.jpg',
             '/img/kiem20152.jpg',
           ]
-        }        
+        }
       },{
         name: 'Alphabet Creative Studio',
         category: 0,
@@ -181,7 +181,7 @@ class DataService {
           images: [
             '/img/alphabet1.jpg',
           ]
-        }        
+        }
       },{
         name: 'OutdoorAR ver2.0',
         category: 0,
@@ -240,31 +240,6 @@ class DataService {
             '/img/outdoorAR5.jpg',
             '/img/outdoorAR9.gif',
             '/img/outdoorAR10.jpg',
-          ]
-        }
-      },{
-        name: 'Instagroom',
-        category: 0,
-        tags: ['Mobile', 'Javascript', 'Service', 'Ionic', 'AngularJS', 'nodejs', 'mongoDB', 'express'],
-        time: {
-          month: 'Oct',
-          year: '2015'
-        },
-        partner: {
-          name: '',
-          url: ''
-        },
-        image: '/img/instagroom-cover.jpg',
-        banner_image: '/img/instagroom-cover.jpg',
-        banner_video: '/img/instagroom.mp4',
-        urls: {
-          behance: '',
-          website: 'https://github.com/hoakusa/Instagram_client'
-        },
-        content: {
-        text: 'Like Instagram, Instagroom app allows users are able to post shots and sharing life with friends. Through following function and sharing pictures, people are welcome to join image-social world as Instagram app. This project is open source, build with Ionic and Angular 1.x, server runs by Heroku, Expressjs and MongoDB.',
-          images: [
-            '/img/instagroom-cover.jpg'
           ]
         }
       },{
@@ -453,7 +428,7 @@ class DataService {
             '/img/pomodoro.jpg'
           ]
         }
-      }  
+      }
     ];
   }
 
