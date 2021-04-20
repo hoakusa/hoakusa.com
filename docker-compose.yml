@@ -1,0 +1,19 @@
+version: '3.3'
+
+networks:
+  traefik-proxy:
+    name: traefik-proxy
+    external: true
+
+services:
+  hoakusa:
+    build: .
+    restart: always
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.hoakusa.rule=Host(`hoakusa.me`) || Host(`www.hoakusa.me`)
+      - traefik.http.routers.hoakusa.entrypoints=websecure
+      - traefik.http.routers.hoakusa.tls.certresolver=letsencrypt
+      - traefik.docker.network=traefik-proxy
+    networks:
+      traefik-proxy:
