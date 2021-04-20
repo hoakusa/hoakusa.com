@@ -1,6 +1,6 @@
 # My personal page
 
-Visit site: [hoakusa.com](http://hoakusa.com)
+Visit site: [hoakusa.me](http://hoakusa.me)
 
 A single page application build by [Angular 1.x](https://angularjs.org/) using [Webpack 2.x](http://webpack.github.io/). The project code was written in ES6 support with [Babel](https://babeljs.io/).
 

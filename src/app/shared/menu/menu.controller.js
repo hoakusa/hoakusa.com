@@ -10,7 +10,7 @@ class MenuController {
     this.$state   = $state;
     this.$timeout = $timeout;
 
-    this.title    = "Alice";
+    this.title    = "An Pham";
     this.bio      = "UX Designer & Web Developer";
     this.tabs     = MenuService.getMenu();
     this.links    = DataService.getContact().links;
@@ -18,7 +18,7 @@ class MenuController {
 
   goto(state) {
     this.close();
-    
+
     this.isWaiting = true;
     this.$timeout(() => {
       this.$state.go(state, {}, {reload: true});
@@ -41,7 +41,7 @@ class MenuController {
   close() {
     this.isOpen = false;
     this.isClose = true;
-    
+
     this.$timeout(() => {
       document.getElementById('menu').style.left = '-100%';
       let arr = document.querySelectorAll('.borderV');

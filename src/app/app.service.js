@@ -2,7 +2,7 @@ import angular from 'angular';
 
 class AppService {
   constructor() {
-    this.title = 'Alice - UX Designer & Web Developer';
+    this.title = 'An Pham - UX Designer & Web Developer';
   }
 
   getTitle() {
@@ -10,7 +10,7 @@ class AppService {
   }
 
   setTitle(str) {
-    this.title = str + ' Alice - UX Designer & Web Developer';
+    this.title = str + ' An Pham - UX Designer & Web Developer';
   }
 }
 

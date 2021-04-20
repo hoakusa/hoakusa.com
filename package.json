@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/hoakusa/hoakusa.com/issues"
   },
-  "homepage": "hoakusa.com",
+  "homepage": "hoakusa.me",
   "dependencies": {
     "angular-ui-router": "^1.0.3",
     "angular": "^1.5.0",
